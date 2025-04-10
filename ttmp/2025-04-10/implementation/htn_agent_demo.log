@@ -1,0 +1,2 @@
+2025-04-10 19:36:40,817 - htn_agent_demo - ERROR - API key environment variable ANTHROPIC_API_KEY not set
+2025-04-10 19:36:47,896 - htn_agent_demo - ERROR - API key environment variable CUSTOM_API_KEY not set

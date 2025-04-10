@@ -1,0 +1,291 @@
+2025-04-10 19:35:21,934 - htn_agent.task_decomposer - INFO - Decomposing task: 38829b3d-c465-48f5-af06-2f48fdba4faa - Research and Write Report on Mini Topic
+2025-04-10 19:35:21,934 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 38829b3d-c465-48f5-af06-2f48fdba4faa
+2025-04-10 19:35:21,934 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,934 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,934 - htn_agent.task_decomposer - ERROR - JSON parsing error for task 38829b3d-c465-48f5-af06-2f48fdba4faa: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,935 - htn_agent.task_decomposer - ERROR - Error decomposing task 38829b3d-c465-48f5-af06-2f48fdba4faa: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,935 - htn_agent.task_decomposer - INFO - Creating fallback subtask c3348af1-8ce8-4ad0-ac91-71d0e9e6f342 for failed decomposition
+2025-04-10 19:35:21,935 - htn_agent.task_executor - INFO - Executing task: c3348af1-8ce8-4ad0-ac91-71d0e9e6f342 - Execute Research and Write Report on Mini Topic
+2025-04-10 19:35:21,935 - htn_agent.task_executor - INFO - Sending execution request for task c3348af1-8ce8-4ad0-ac91-71d0e9e6f342 (attempt 1/4)
+2025-04-10 19:35:21,935 - htn_agent.task_executor - INFO - Successfully executed task c3348af1-8ce8-4ad0-ac91-71d0e9e6f342
+2025-04-10 19:35:21,935 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 19:35:21,935 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:21,935 - htn_agent.task_executor - INFO - Added writing results to section: Execute Research and Report on Mini Topic
+2025-04-10 19:35:21,936 - htn_agent.task_decomposer - INFO - Decomposing task: 3d01e709-ad6c-4140-9766-f083c4821bc4 - Research and Write Report on Test Topic
+2025-04-10 19:35:21,936 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 3d01e709-ad6c-4140-9766-f083c4821bc4
+2025-04-10 19:35:21,936 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,936 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,936 - htn_agent.task_decomposer - ERROR - JSON parsing error for task 3d01e709-ad6c-4140-9766-f083c4821bc4: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,936 - htn_agent.task_decomposer - ERROR - Error decomposing task 3d01e709-ad6c-4140-9766-f083c4821bc4: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,936 - htn_agent.task_decomposer - INFO - Creating fallback subtask de1f6379-42cd-42d1-a56f-2bc8b63ff80f for failed decomposition
+2025-04-10 19:35:21,937 - htn_agent.task_decomposer - INFO - Decomposing task: 9faeb7f9-4ee3-477a-9fe8-4c0bbefcd2b5 - Research and Write Report on Export Test
+2025-04-10 19:35:21,937 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 9faeb7f9-4ee3-477a-9fe8-4c0bbefcd2b5
+2025-04-10 19:35:21,937 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,937 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,937 - htn_agent.task_decomposer - ERROR - JSON parsing error for task 9faeb7f9-4ee3-477a-9fe8-4c0bbefcd2b5: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,937 - htn_agent.task_decomposer - ERROR - Error decomposing task 9faeb7f9-4ee3-477a-9fe8-4c0bbefcd2b5: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,937 - htn_agent.task_decomposer - INFO - Creating fallback subtask 2a6f58eb-3e78-4ef7-ba35-96d6ff264a06 for failed decomposition
+2025-04-10 19:35:21,937 - htn_agent.task_executor - INFO - Executing task: 2a6f58eb-3e78-4ef7-ba35-96d6ff264a06 - Execute Research and Write Report on Export Test
+2025-04-10 19:35:21,937 - htn_agent.task_executor - INFO - Sending execution request for task 2a6f58eb-3e78-4ef7-ba35-96d6ff264a06 (attempt 1/4)
+2025-04-10 19:35:21,937 - htn_agent.task_executor - INFO - Successfully executed task 2a6f58eb-3e78-4ef7-ba35-96d6ff264a06
+2025-04-10 19:35:21,937 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 19:35:21,937 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:21,937 - htn_agent.task_executor - INFO - Added writing results to section: Execute Research and Report on Export Test
+2025-04-10 19:35:21,938 - htn_agent.task_decomposer - INFO - Decomposing task: 48dffbbf-a725-4a99-b92b-f74f6d4746c4 - Research and Write Report on Status Test
+2025-04-10 19:35:21,938 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 48dffbbf-a725-4a99-b92b-f74f6d4746c4
+2025-04-10 19:35:21,938 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,938 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,938 - htn_agent.task_decomposer - ERROR - JSON parsing error for task 48dffbbf-a725-4a99-b92b-f74f6d4746c4: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,938 - htn_agent.task_decomposer - ERROR - Error decomposing task 48dffbbf-a725-4a99-b92b-f74f6d4746c4: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,938 - htn_agent.task_decomposer - INFO - Creating fallback subtask 280f6b1a-062f-40b0-afb6-1da42b865377 for failed decomposition
+2025-04-10 19:35:21,938 - htn_agent.task_decomposer - INFO - Decomposing task: c284a1fa-8939-4587-b7a6-3498d571884b - Research and Write Report on Visualization Test
+2025-04-10 19:35:21,938 - htn_agent.task_decomposer - INFO - Sending decomposition request for task c284a1fa-8939-4587-b7a6-3498d571884b
+2025-04-10 19:35:21,939 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,939 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,939 - htn_agent.task_decomposer - ERROR - JSON parsing error for task c284a1fa-8939-4587-b7a6-3498d571884b: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,939 - htn_agent.task_decomposer - ERROR - Error decomposing task c284a1fa-8939-4587-b7a6-3498d571884b: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:21,939 - htn_agent.task_decomposer - INFO - Creating fallback subtask 9f94234b-b9b2-47d8-ba28-03cfb0d5c477 for failed decomposition
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Evaluating plan with 0 completed and 3 pending tasks
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:21,939 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Evaluating plan with 0 completed and 3 pending tasks
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:21,939 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,939 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:21,940 - htn_agent.task_decomposer - INFO - Decomposing task: generic1 - Generic task
+2025-04-10 19:35:21,940 - htn_agent.task_decomposer - INFO - Sending decomposition request for task generic1
+2025-04-10 19:35:21,940 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,940 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task generic1
+2025-04-10 19:35:21,940 - htn_agent.task_decomposer - INFO - Creating 2 subtasks for task generic1
+2025-04-10 19:35:21,940 - htn_agent.task_decomposer - INFO - Resolving dependencies for 2 subtasks
+2025-04-10 19:35:21,940 - htn_agent.task_decomposer - INFO - Task generic1 decomposed into 2 subtasks
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Decomposing task: research1 - Research quantum computing
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Sending decomposition request for task research1
+2025-04-10 19:35:21,941 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task research1
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Creating 3 subtasks for task research1
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Resolving dependencies for 3 subtasks
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Task research1 decomposed into 3 subtasks
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Decomposing task: write1 - Write report
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Sending decomposition request for task write1
+2025-04-10 19:35:21,941 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task write1
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Creating 3 subtasks for task write1
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Resolving dependencies for 3 subtasks
+2025-04-10 19:35:21,941 - htn_agent.task_decomposer - INFO - Task write1 decomposed into 3 subtasks
+2025-04-10 19:35:21,942 - htn_agent.task_decomposer - INFO - Decomposing task: error1 - Error task
+2025-04-10 19:35:21,942 - htn_agent.task_decomposer - INFO - Sending decomposition request for task error1
+2025-04-10 19:35:21,942 - htn_agent.task_decomposer - ERROR - Error decomposing task error1: Simulated error
+2025-04-10 19:35:21,942 - htn_agent.task_decomposer - INFO - Creating fallback subtask f4904c0a-96a7-49bd-967e-6b7504449837 for failed decomposition
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Executing task: error1 - Error task
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 1/4)
+2025-04-10 19:35:21,942 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 1/4): Simulated error
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Retrying task execution...
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 2/4)
+2025-04-10 19:35:21,942 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 2/4): Simulated error
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Retrying task execution...
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 3/4)
+2025-04-10 19:35:21,942 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 3/4): Simulated error
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Retrying task execution...
+2025-04-10 19:35:21,942 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 4/4)
+2025-04-10 19:35:21,942 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 4/4): Simulated error
+2025-04-10 19:35:21,942 - htn_agent.task_executor - ERROR - Task execution failed after 4 attempts
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Executing task: analyze1 - Analyze trends
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Sending execution request for task analyze1 (attempt 1/4)
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Successfully executed task analyze1
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Executing task: search1 - Search for recent papers
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Sending execution request for task search1 (attempt 1/4)
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Successfully executed task search1
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 19:35:21,943 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Executing task: dep1 - Dependency task
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Sending execution request for task dep1 (attempt 1/4)
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Successfully executed task dep1
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Executing task: main1 - Main task with dependency
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Sending execution request for task main1 (attempt 1/4)
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Successfully executed task main1
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Executing task: write1 - Write introduction
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Sending execution request for task write1 (attempt 1/4)
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Successfully executed task write1
+2025-04-10 19:35:21,944 - htn_agent.task_executor - INFO - Added writing results to section: Introduction
+2025-04-10 19:35:33,301 - htn_agent.task_decomposer - INFO - Decomposing task: cbf55e50-bdb6-4444-94f8-80772f76e344 - Research and Write Report on Mini Topic
+2025-04-10 19:35:33,301 - htn_agent.task_decomposer - INFO - Sending decomposition request for task cbf55e50-bdb6-4444-94f8-80772f76e344
+2025-04-10 19:35:33,301 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,301 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,301 - htn_agent.task_decomposer - ERROR - JSON parsing error for task cbf55e50-bdb6-4444-94f8-80772f76e344: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,301 - htn_agent.task_decomposer - ERROR - Error decomposing task cbf55e50-bdb6-4444-94f8-80772f76e344: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,301 - htn_agent.task_decomposer - INFO - Creating fallback subtask db03c703-b428-42dd-a69c-283a66d7845d for failed decomposition
+2025-04-10 19:35:33,301 - htn_agent.task_executor - INFO - Executing task: db03c703-b428-42dd-a69c-283a66d7845d - Execute Research and Write Report on Mini Topic
+2025-04-10 19:35:33,301 - htn_agent.task_executor - INFO - Sending execution request for task db03c703-b428-42dd-a69c-283a66d7845d (attempt 1/4)
+2025-04-10 19:35:33,301 - htn_agent.task_executor - INFO - Successfully executed task db03c703-b428-42dd-a69c-283a66d7845d
+2025-04-10 19:35:33,301 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 19:35:33,302 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:33,302 - htn_agent.task_executor - INFO - Added writing results to section: Execute Research and Report on Mini Topic
+2025-04-10 19:35:33,302 - htn_agent.task_decomposer - INFO - Decomposing task: daf9039e-2aa3-4630-8cbc-2e0d4b086580 - Research and Write Report on Test Topic
+2025-04-10 19:35:33,302 - htn_agent.task_decomposer - INFO - Sending decomposition request for task daf9039e-2aa3-4630-8cbc-2e0d4b086580
+2025-04-10 19:35:33,302 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,302 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,302 - htn_agent.task_decomposer - ERROR - JSON parsing error for task daf9039e-2aa3-4630-8cbc-2e0d4b086580: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,302 - htn_agent.task_decomposer - ERROR - Error decomposing task daf9039e-2aa3-4630-8cbc-2e0d4b086580: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,302 - htn_agent.task_decomposer - INFO - Creating fallback subtask 130a3f87-1b04-4bdd-98bc-61d5a596e7ef for failed decomposition
+2025-04-10 19:35:33,303 - htn_agent.task_decomposer - INFO - Decomposing task: 3c7d2fd8-f5a7-4671-a1ad-5c5461494036 - Research and Write Report on Export Test
+2025-04-10 19:35:33,303 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 3c7d2fd8-f5a7-4671-a1ad-5c5461494036
+2025-04-10 19:35:33,303 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,303 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,303 - htn_agent.task_decomposer - ERROR - JSON parsing error for task 3c7d2fd8-f5a7-4671-a1ad-5c5461494036: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,303 - htn_agent.task_decomposer - ERROR - Error decomposing task 3c7d2fd8-f5a7-4671-a1ad-5c5461494036: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,303 - htn_agent.task_decomposer - INFO - Creating fallback subtask 42c5f21b-e896-4f9e-8acd-f72bbc89a7de for failed decomposition
+2025-04-10 19:35:33,303 - htn_agent.task_executor - INFO - Executing task: 42c5f21b-e896-4f9e-8acd-f72bbc89a7de - Execute Research and Write Report on Export Test
+2025-04-10 19:35:33,303 - htn_agent.task_executor - INFO - Sending execution request for task 42c5f21b-e896-4f9e-8acd-f72bbc89a7de (attempt 1/4)
+2025-04-10 19:35:33,303 - htn_agent.task_executor - INFO - Successfully executed task 42c5f21b-e896-4f9e-8acd-f72bbc89a7de
+2025-04-10 19:35:33,303 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 19:35:33,303 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:33,303 - htn_agent.task_executor - INFO - Added writing results to section: Execute Research and Report on Export Test
+2025-04-10 19:35:33,304 - htn_agent.task_decomposer - INFO - Decomposing task: 307cc4b7-4dfc-4d8a-b6ac-4284c205b824 - Research and Write Report on Status Test
+2025-04-10 19:35:33,304 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 307cc4b7-4dfc-4d8a-b6ac-4284c205b824
+2025-04-10 19:35:33,304 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,304 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,304 - htn_agent.task_decomposer - ERROR - JSON parsing error for task 307cc4b7-4dfc-4d8a-b6ac-4284c205b824: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,304 - htn_agent.task_decomposer - ERROR - Error decomposing task 307cc4b7-4dfc-4d8a-b6ac-4284c205b824: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,304 - htn_agent.task_decomposer - INFO - Creating fallback subtask b9b2bfa0-2a3d-447e-bd1d-f9460c5fb406 for failed decomposition
+2025-04-10 19:35:33,305 - htn_agent.task_decomposer - INFO - Decomposing task: d3dfdfcc-848d-4d2c-bfaf-4ef785c258bf - Research and Write Report on Visualization Test
+2025-04-10 19:35:33,305 - htn_agent.task_decomposer - INFO - Sending decomposition request for task d3dfdfcc-848d-4d2c-bfaf-4ef785c258bf
+2025-04-10 19:35:33,305 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,305 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,305 - htn_agent.task_decomposer - ERROR - JSON parsing error for task d3dfdfcc-848d-4d2c-bfaf-4ef785c258bf: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,305 - htn_agent.task_decomposer - ERROR - Error decomposing task d3dfdfcc-848d-4d2c-bfaf-4ef785c258bf: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:33,305 - htn_agent.task_decomposer - INFO - Creating fallback subtask ee5a4483-08c8-4df9-8237-300bd3b5bcb1 for failed decomposition
+2025-04-10 19:35:33,305 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:33,305 - htn_agent.plan_adapter - INFO - Evaluating plan with 0 completed and 3 pending tasks
+2025-04-10 19:35:33,305 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:33,305 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,305 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:33,305 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:33,305 - htn_agent.plan_adapter - INFO - Evaluating plan with 0 completed and 3 pending tasks
+2025-04-10 19:35:33,305 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:33,305 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,306 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:33,306 - htn_agent.task_decomposer - INFO - Decomposing task: generic1 - Generic task
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Sending decomposition request for task generic1
+2025-04-10 19:35:33,307 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task generic1
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Creating 2 subtasks for task generic1
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Resolving dependencies for 2 subtasks
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Task generic1 decomposed into 2 subtasks
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Decomposing task: research1 - Research quantum computing
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Sending decomposition request for task research1
+2025-04-10 19:35:33,307 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task research1
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Creating 3 subtasks for task research1
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Resolving dependencies for 3 subtasks
+2025-04-10 19:35:33,307 - htn_agent.task_decomposer - INFO - Task research1 decomposed into 3 subtasks
+2025-04-10 19:35:33,308 - htn_agent.task_decomposer - INFO - Decomposing task: write1 - Write report
+2025-04-10 19:35:33,308 - htn_agent.task_decomposer - INFO - Sending decomposition request for task write1
+2025-04-10 19:35:33,308 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:33,308 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task write1
+2025-04-10 19:35:33,308 - htn_agent.task_decomposer - INFO - Creating 3 subtasks for task write1
+2025-04-10 19:35:33,308 - htn_agent.task_decomposer - INFO - Resolving dependencies for 3 subtasks
+2025-04-10 19:35:33,308 - htn_agent.task_decomposer - INFO - Task write1 decomposed into 3 subtasks
+2025-04-10 19:35:33,309 - htn_agent.task_decomposer - INFO - Decomposing task: error1 - Error task
+2025-04-10 19:35:33,309 - htn_agent.task_decomposer - INFO - Sending decomposition request for task error1
+2025-04-10 19:35:33,309 - htn_agent.task_decomposer - ERROR - Error decomposing task error1: Simulated error
+2025-04-10 19:35:33,309 - htn_agent.task_decomposer - INFO - Creating fallback subtask 860ffac1-466d-4897-b8ee-140d88aa55d4 for failed decomposition
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Executing task: error1 - Error task
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 1/4)
+2025-04-10 19:35:33,309 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 1/4): Simulated error
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Retrying task execution...
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 2/4)
+2025-04-10 19:35:33,309 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 2/4): Simulated error
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Retrying task execution...
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 3/4)
+2025-04-10 19:35:33,309 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 3/4): Simulated error
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Retrying task execution...
+2025-04-10 19:35:33,309 - htn_agent.task_executor - INFO - Sending execution request for task error1 (attempt 4/4)
+2025-04-10 19:35:33,310 - htn_agent.task_executor - WARNING - Error executing task error1 (attempt 4/4): Simulated error
+2025-04-10 19:35:33,310 - htn_agent.task_executor - ERROR - Task execution failed after 4 attempts
+2025-04-10 19:35:33,310 - htn_agent.task_executor - INFO - Executing task: analyze1 - Analyze trends
+2025-04-10 19:35:33,310 - htn_agent.task_executor - INFO - Sending execution request for task analyze1 (attempt 1/4)
+2025-04-10 19:35:33,310 - htn_agent.task_executor - INFO - Successfully executed task analyze1
+2025-04-10 19:35:33,310 - htn_agent.task_executor - INFO - Executing task: search1 - Search for recent papers
+2025-04-10 19:35:33,310 - htn_agent.task_executor - INFO - Sending execution request for task search1 (attempt 1/4)
+2025-04-10 19:35:33,310 - htn_agent.task_executor - INFO - Successfully executed task search1
+2025-04-10 19:35:33,310 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 19:35:33,311 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:33,311 - htn_agent.task_executor - INFO - Executing task: dep1 - Dependency task
+2025-04-10 19:35:33,311 - htn_agent.task_executor - INFO - Sending execution request for task dep1 (attempt 1/4)
+2025-04-10 19:35:33,311 - htn_agent.task_executor - INFO - Successfully executed task dep1
+2025-04-10 19:35:33,311 - htn_agent.task_executor - INFO - Executing task: main1 - Main task with dependency
+2025-04-10 19:35:33,311 - htn_agent.task_executor - INFO - Sending execution request for task main1 (attempt 1/4)
+2025-04-10 19:35:33,311 - htn_agent.task_executor - INFO - Successfully executed task main1
+2025-04-10 19:35:33,312 - htn_agent.task_executor - INFO - Executing task: write1 - Write introduction
+2025-04-10 19:35:33,312 - htn_agent.task_executor - INFO - Sending execution request for task write1 (attempt 1/4)
+2025-04-10 19:35:33,312 - htn_agent.task_executor - INFO - Successfully executed task write1
+2025-04-10 19:35:33,312 - htn_agent.task_executor - INFO - Added writing results to section: Introduction
+2025-04-10 19:35:41,010 - htn_agent.task_decomposer - INFO - Decomposing task: 0efd422d-73f1-4d7d-adff-cddd541cdf9a - Research and Write Report on Quantum Computing
+2025-04-10 19:35:41,010 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 0efd422d-73f1-4d7d-adff-cddd541cdf9a
+2025-04-10 19:35:41,010 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:41,010 - htn_agent - ERROR - JSON parsing failed: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:41,010 - htn_agent.task_decomposer - ERROR - JSON parsing error for task 0efd422d-73f1-4d7d-adff-cddd541cdf9a: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:41,010 - htn_agent.task_decomposer - ERROR - Error decomposing task 0efd422d-73f1-4d7d-adff-cddd541cdf9a: Expecting value: line 1 column 1 (char 0)
+2025-04-10 19:35:41,011 - htn_agent.task_decomposer - INFO - Creating fallback subtask c41ec638-4b4c-4e77-87da-f5d571c6d69f for failed decomposition
+2025-04-10 19:35:41,011 - htn_agent.task_executor - INFO - Executing task: c41ec638-4b4c-4e77-87da-f5d571c6d69f - Execute Research and Write Report on Quantum Computing
+2025-04-10 19:35:41,011 - htn_agent.task_executor - INFO - Sending execution request for task c41ec638-4b4c-4e77-87da-f5d571c6d69f (attempt 1/4)
+2025-04-10 19:35:41,011 - htn_agent.task_executor - INFO - Successfully executed task c41ec638-4b4c-4e77-87da-f5d571c6d69f
+2025-04-10 19:35:41,011 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 19:35:41,011 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:41,011 - htn_agent.task_executor - INFO - Added writing results to section: Execute Research and Report on Quantum Computing
+2025-04-10 19:35:41,011 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:41,011 - htn_agent.plan_adapter - INFO - Evaluating plan with 2 completed and 0 pending tasks
+2025-04-10 19:35:41,011 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:41,011 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:41,011 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Executing task: 266eba82-1456-4512-992e-52654cb1f841 - Research quantum error correction
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Sending execution request for task 266eba82-1456-4512-992e-52654cb1f841 (attempt 1/4)
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Successfully executed task 266eba82-1456-4512-992e-52654cb1f841
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Added research results to sources as source_2
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Executing task: 05dd466b-e0ca-466a-8c16-44faccc8ff60 - Analyze industry applications
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Sending execution request for task 05dd466b-e0ca-466a-8c16-44faccc8ff60 (attempt 1/4)
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Successfully executed task 05dd466b-e0ca-466a-8c16-44faccc8ff60
+2025-04-10 19:35:41,012 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:41,012 - htn_agent.plan_adapter - INFO - Evaluating plan with 4 completed and 0 pending tasks
+2025-04-10 19:35:41,012 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:41,012 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:41,012 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Executing task: 40b22d59-9df7-45d7-ba6c-4ab42c23f7da - Research quantum error correction
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Sending execution request for task 40b22d59-9df7-45d7-ba6c-4ab42c23f7da (attempt 1/4)
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Successfully executed task 40b22d59-9df7-45d7-ba6c-4ab42c23f7da
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Added research results to sources as source_3
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Executing task: c2ff8af4-c21d-4d70-8604-f4eccc0ffc76 - Analyze industry applications
+2025-04-10 19:35:41,012 - htn_agent.task_executor - INFO - Sending execution request for task c2ff8af4-c21d-4d70-8604-f4eccc0ffc76 (attempt 1/4)
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Successfully executed task c2ff8af4-c21d-4d70-8604-f4eccc0ffc76
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Evaluating plan with 6 completed and 0 pending tasks
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:41,013 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Executing task: 8b5b7a0f-d3a2-4db4-b27f-5002608fa1c1 - Research quantum error correction
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Sending execution request for task 8b5b7a0f-d3a2-4db4-b27f-5002608fa1c1 (attempt 1/4)
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Successfully executed task 8b5b7a0f-d3a2-4db4-b27f-5002608fa1c1
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Added research results to sources as source_4
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Executing task: 8f0cdcb3-1a32-4cde-91da-c367e0b45568 - Analyze industry applications
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Sending execution request for task 8f0cdcb3-1a32-4cde-91da-c367e0b45568 (attempt 1/4)
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Successfully executed task 8f0cdcb3-1a32-4cde-91da-c367e0b45568
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Evaluating plan with 8 completed and 0 pending tasks
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 19:35:41,013 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:35:41,013 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Executing task: f5aed8ca-1fd4-4793-9c39-9a1e8a1e473b - Research quantum error correction
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Sending execution request for task f5aed8ca-1fd4-4793-9c39-9a1e8a1e473b (attempt 1/4)
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Successfully executed task f5aed8ca-1fd4-4793-9c39-9a1e8a1e473b
+2025-04-10 19:35:41,013 - htn_agent.task_executor - INFO - Added research results to sources as source_5
+2025-04-10 19:35:41,014 - htn_agent.task_executor - INFO - Extracted 1 facts from research
+2025-04-10 19:35:41,014 - htn_agent.task_executor - INFO - Executing task: 138f4cbe-50b3-4ddc-899a-0a5ded30814b - Analyze industry applications
+2025-04-10 19:35:41,014 - htn_agent.task_executor - INFO - Sending execution request for task 138f4cbe-50b3-4ddc-899a-0a5ded30814b (attempt 1/4)
+2025-04-10 19:35:41,014 - htn_agent.task_executor - INFO - Successfully executed task 138f4cbe-50b3-4ddc-899a-0a5ded30814b
