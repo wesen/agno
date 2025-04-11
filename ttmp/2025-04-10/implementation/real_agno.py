@@ -139,21 +139,21 @@ def create_agno_agent(model_name: str, api_key: str, instructions: str = None, t
     """
     try:
         # Import Agno components
-        from agno import Agent
+        from agno.agent import Agent
         
         # Determine which model provider to use based on model_name
         if 'claude' in model_name.lower():
             from agno.models.anthropic import Claude
-            model = Claude(api_key=api_key, model=model_name)
+            model = Claude(api_key=api_key, id=model_name)
             logger.info(f"Created Claude model: {model_name}")
         elif 'gpt' in model_name.lower() or 'openai' in model_name.lower():
             from agno.models.openai import GPT
-            model = GPT(api_key=api_key, model=model_name)
+            model = GPT(api_key=api_key, id=model_name)
             logger.info(f"Created OpenAI GPT model: {model_name}")
         else:
             logger.warning(f"Unknown model type: {model_name}, defaulting to Claude")
             from agno.models.anthropic import Claude
-            model = Claude(api_key=api_key, model=model_name)
+            model = Claude(api_key=api_key, id=model_name)
         
         # Create agent with specified model and optional components
         agent_config = {

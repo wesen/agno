@@ -1,2 +1,140 @@
 2025-04-10 19:36:40,817 - htn_agent_demo - ERROR - API key environment variable ANTHROPIC_API_KEY not set
 2025-04-10 19:36:47,896 - htn_agent_demo - ERROR - API key environment variable CUSTOM_API_KEY not set
+2025-04-10 19:42:42,155 - htn_agent_demo - ERROR - API key environment variable ANTHROPIC_API_KEY not set
+2025-04-10 19:42:46,892 - htn_agent_demo - INFO - Starting HTN Planning Agent demo with claude-3-5-sonnet-latest
+2025-04-10 19:42:46,892 - htn_agent_demo - INFO - Creating Agno agent with model: claude-3-5-sonnet-latest
+2025-04-10 19:42:46,892 - htn_agent - ERROR - Failed to import Agno: cannot import name 'Agent' from 'agno' (/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/__init__.py)
+2025-04-10 19:42:46,892 - htn_agent - ERROR - Please install Agno with: pip install agno
+2025-04-10 19:42:46,892 - htn_agent_demo - ERROR - Error running demo: cannot import name 'Agent' from 'agno' (/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/__init__.py)
+Traceback (most recent call last):
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno_demo.py", line 46, in run_demo
+    agent = create_agno_agent(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno.py", line 142, in create_agno_agent
+    from agno import Agent
+ImportError: cannot import name 'Agent' from 'agno' (/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/__init__.py)
+2025-04-10 19:43:38,941 - htn_agent_demo - INFO - Starting HTN Planning Agent demo with claude-3-5-sonnet-latest
+2025-04-10 19:43:38,941 - htn_agent_demo - INFO - Creating Agno agent with model: claude-3-5-sonnet-latest
+2025-04-10 19:43:38,942 - htn_agent - ERROR - Failed to import Agno: cannot import name 'Agent' from 'agno' (/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/__init__.py)
+2025-04-10 19:43:38,942 - htn_agent - ERROR - Please install Agno with: pip install agno
+2025-04-10 19:43:38,942 - htn_agent_demo - ERROR - Error running demo: cannot import name 'Agent' from 'agno' (/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/__init__.py)
+Traceback (most recent call last):
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno_demo.py", line 46, in run_demo
+    agent = create_agno_agent(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno.py", line 142, in create_agno_agent
+    from agno import Agent
+ImportError: cannot import name 'Agent' from 'agno' (/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/__init__.py)
+2025-04-10 19:54:29,272 - htn_agent_demo - ERROR - API key environment variable ANTHROPIC_API_KEY not set
+2025-04-10 19:56:33,960 - htn_agent_demo - INFO - Starting HTN Planning Agent demo with claude-3-5-sonnet-latest
+2025-04-10 19:56:33,960 - htn_agent_demo - INFO - Creating Agno agent with model: claude-3-5-sonnet-latest
+2025-04-10 19:56:34,141 - htn_agent - ERROR - Failed to import Agno: `anthropic` not installed. Please install using `pip install anthropic`
+2025-04-10 19:56:34,141 - htn_agent - ERROR - Please install Agno with: pip install agno
+2025-04-10 19:56:34,141 - htn_agent_demo - ERROR - Error running demo: `anthropic` not installed. Please install using `pip install anthropic`
+Traceback (most recent call last):
+  File "/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/utils/models/claude.py", line 9, in <module>
+    from anthropic.types import (
+ModuleNotFoundError: No module named 'anthropic'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno_demo.py", line 46, in run_demo
+    agent = create_agno_agent(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno.py", line 146, in create_agno_agent
+    from agno.models.anthropic import Claude
+  File "/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/models/anthropic/__init__.py", line 1, in <module>
+    from agno.models.anthropic.claude import Claude
+  File "/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/models/anthropic/claude.py", line 12, in <module>
+    from agno.utils.models.claude import format_messages
+  File "/home/manuel/.pyenv/versions/agno-env/lib/python3.11/site-packages/agno/utils/models/claude.py", line 14, in <module>
+    raise ImportError("`anthropic` not installed. Please install using `pip install anthropic`")
+ImportError: `anthropic` not installed. Please install using `pip install anthropic`
+2025-04-10 19:57:18,924 - htn_agent_demo - INFO - Starting HTN Planning Agent demo with claude-3-5-sonnet-latest
+2025-04-10 19:57:18,924 - htn_agent_demo - INFO - Creating Agno agent with model: claude-3-5-sonnet-latest
+2025-04-10 19:57:19,236 - htn_agent - ERROR - Error creating Agno agent: Claude.__init__() got an unexpected keyword argument 'model'
+2025-04-10 19:57:19,236 - htn_agent_demo - ERROR - Error running demo: Claude.__init__() got an unexpected keyword argument 'model'
+Traceback (most recent call last):
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno_demo.py", line 46, in run_demo
+    agent = create_agno_agent(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/real_agno.py", line 147, in create_agno_agent
+    model = Claude(api_key=api_key, model=model_name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Claude.__init__() got an unexpected keyword argument 'model'
+2025-04-10 19:58:29,437 - htn_agent_demo - INFO - Starting HTN Planning Agent demo with claude-3-5-sonnet-latest
+2025-04-10 19:58:29,437 - htn_agent_demo - INFO - Creating Agno agent with model: claude-3-5-sonnet-latest
+2025-04-10 19:58:29,754 - htn_agent - INFO - Created Claude model: claude-3-5-sonnet-latest
+2025-04-10 19:58:29,754 - htn_agent - INFO - Created Agno agent with claude-3-5-sonnet-latest
+2025-04-10 19:58:29,754 - htn_agent - INFO - Initialized AgnoAgentWrapper with Agent
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - Creating HTN Planning Agent
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - 
+===== HTN Planning Agent Demo =====
+
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - Topic: Quantum Computing
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - Goal: explains recent developments
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - Max Steps: 1
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - Model: claude-3-5-sonnet-latest
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - Plan Adaptation Frequency: Every 2 tasks
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - 
+===== Planning & Execution =====
+
+2025-04-10 19:58:29,754 - htn_agent_demo - INFO - Starting research and report generation process
+2025-04-10 19:58:29,754 - htn_agent.task_decomposer - INFO - Decomposing task: f6d8b843-d229-49b4-92b4-53676b4a6eb4 - Research and Write Report on Quantum Computing
+2025-04-10 19:58:29,754 - htn_agent.task_decomposer - INFO - Sending decomposition request for task f6d8b843-d229-49b4-92b4-53676b4a6eb4
+2025-04-10 19:58:29,754 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Decomposition Request
+        
+        You need to break down the following task int...
+2025-04-10 19:58:36,614 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 19:58:36,918 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 19:58:36,918 - htn_agent - INFO - Received response from agent
+2025-04-10 19:58:36,918 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 19:58:36,918 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task f6d8b843-d229-49b4-92b4-53676b4a6eb4
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - INFO - Creating 5 subtasks for task f6d8b843-d229-49b4-92b4-53676b4a6eb4
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - INFO - Resolving dependencies for 5 subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st1' not found in created subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st1' not found in created subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st2' not found in created subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st1' not found in created subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st2' not found in created subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st3' not found in created subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st4' not found in created subtasks
+2025-04-10 19:58:36,919 - htn_agent.task_decomposer - INFO - Task f6d8b843-d229-49b4-92b4-53676b4a6eb4 decomposed into 5 subtasks
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - 
+===== Final Report =====
+
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - Plan execution reached maximum steps (1). Partial results available.
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - 
+===== Plan Structure =====
+
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - # Current Plan Structure
+
+🔄 Research and Write Report on Quantum Computing (f6d8b8...)
+  ⏱️ Define Research Scope & Outline (7691db...)
+  ⏱️ Gather Academic Sources (5b4c7f...)
+  ⏱️ Extract Key Information (87fe17...)
+  ⏱️ Write First Draft (089066...)
+  ⏱️ Review and Revise (befce6...)
+
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - 
+===== Plan Status =====
+
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - topic: Quantum Computing
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - total_tasks: 6
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - completed: 0
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - pending: 5
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - in_progress: 0
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - decomposing: 1
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - failed: 0
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - facts_gathered: 0
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - sources_found: 0
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - sections_written: 0
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - 
+===== Facts Gathered =====
+
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - No facts gathered
+2025-04-10 19:58:36,919 - htn_agent_demo - INFO - 
+===== Demo Complete =====
+
