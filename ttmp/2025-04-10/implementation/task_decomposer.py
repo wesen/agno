@@ -6,11 +6,26 @@ import json
 import uuid
 import logging
 import re
+import os
 from typing import List, Optional, Dict, Any
 import asyncio
 
 # Configure logging
 logger = logging.getLogger('htn_agent.task_decomposer')
+
+# Import tracing functionality if available
+try:
+    from real_agno import save_trace
+    TRACING_ENABLED = True
+    logger.info("Trace logging enabled for task decomposer")
+except ImportError:
+    TRACING_ENABLED = False
+    logger.warning("Trace logging not available for task decomposer")
+    
+    # Define a dummy function if real save_trace isn't available
+    def save_trace(trace_type: str, content: Any, metadata: Dict = None) -> str:
+        """Dummy trace function when real tracing is not available."""
+        return None
 
 # Import real Agno wrapper and JSON extraction utility
 try:
@@ -214,11 +229,34 @@ class TaskDecomposer:
         Note: For the first subtask, the dependencies list should be empty since there are no other subtasks yet.
         """
         
+        decomposition_id = str(uuid.uuid4())
+        
+        # Save task decomposition request trace
+        if TRACING_ENABLED:
+            task_metadata = {
+                "decomposition_id": decomposition_id,
+                "task_id": task.id,
+                "task_name": task.name,
+                "is_primitive": task.is_primitive,
+                "parent_id": task.parent_id
+            }
+            save_trace("task_decomposition_request", prompt, task_metadata)
+        
         try:
             # Get decomposition from LLM
             logger.info(f"Sending decomposition request for task {task.id}")
             response = await self.agent.arun(prompt)
             content = response.content
+            
+            # Save raw response trace
+            if TRACING_ENABLED:
+                response_metadata = {
+                    "decomposition_id": decomposition_id,
+                    "task_id": task.id,
+                    "task_name": task.name,
+                    "response_type": "raw"
+                }
+                save_trace("task_decomposition_response", content, response_metadata)
             
             # Extract JSON from response using enhanced parser
             try:
@@ -226,37 +264,86 @@ class TaskDecomposer:
                 logger.info(f"Successfully parsed JSON response for task {task.id}")
                 logger.debug(f"Extracted JSON: {decomposition}")
                 
+                # Save parsed decomposition trace
+                if TRACING_ENABLED:
+                    parsed_metadata = {
+                        "decomposition_id": decomposition_id,
+                        "task_id": task.id,
+                        "task_name": task.name,
+                        "subtask_count": len(decomposition.get("subtasks", [])),
+                        "parsing_status": "success"
+                    }
+                    save_trace("task_decomposition_parsed", decomposition, parsed_metadata)
+                
                 # Validate the expected structure
                 if "subtasks" not in decomposition:
                     logger.error(f"Missing 'subtasks' in decomposition response: {decomposition}")
+                    if TRACING_ENABLED:
+                        save_trace("task_decomposition_error", "Missing 'subtasks' key", {
+                            "decomposition_id": decomposition_id,
+                            "task_id": task.id,
+                            "error_type": "validation",
+                            "details": "Missing 'subtasks' in decomposition response"
+                        })
                     raise ValueError("Missing 'subtasks' in decomposition response")
                 
                 if not isinstance(decomposition["subtasks"], list):
                     logger.error(f"'subtasks' is not a list in response: {decomposition}")
+                    if TRACING_ENABLED:
+                        save_trace("task_decomposition_error", "subtasks is not a list", {
+                            "decomposition_id": decomposition_id,
+                            "task_id": task.id,
+                            "error_type": "validation",
+                            "details": "'subtasks' is not a list in decomposition response",
+                            "actual_type": type(decomposition["subtasks"]).__name__
+                        })
                     raise ValueError("'subtasks' is not a list in decomposition response")
                 
                 if len(decomposition["subtasks"]) == 0:
                     logger.warning(f"Empty subtasks list for task {task.id}")
+                    if TRACING_ENABLED:
+                        save_trace("task_decomposition_error", "Empty subtasks list", {
+                            "decomposition_id": decomposition_id,
+                            "task_id": task.id,
+                            "error_type": "validation",
+                            "details": "Empty subtasks list in decomposition response"
+                        })
                     raise ValueError("Empty subtasks list in decomposition response")
                 
             except (json.JSONDecodeError, ValueError) as e:
                 logger.error(f"JSON parsing error for task {task.id}: {str(e)}")
                 logger.debug(f"Problematic content: {content[:500]}...")
+                
+                # Save parsing error trace
+                if TRACING_ENABLED:
+                    error_metadata = {
+                        "decomposition_id": decomposition_id,
+                        "task_id": task.id,
+                        "task_name": task.name,
+                        "error_type": type(e).__name__,
+                        "error_message": str(e),
+                        "parsing_status": "failed"
+                    }
+                    save_trace("task_decomposition_error", content[:500], error_metadata)
+                
                 raise
             
             # Create subtasks from decomposition
             subtasks = []
             created_subtasks = {}  # Map of name to id for dependency resolution
+            subtask_creation_details = []
             
             logger.info(f"Creating {len(decomposition['subtasks'])} subtasks for task {task.id}")
             
             for subtask_data in decomposition["subtasks"]:
                 # Validate required fields
+                missing_fields = []
                 required_fields = ["name", "description", "is_primitive"]
                 for field in required_fields:
                     if field not in subtask_data:
                         logger.warning(f"Missing required field '{field}' in subtask data: {subtask_data}")
                         subtask_data[field] = "Missing" if field in ["name", "description"] else True
+                        missing_fields.append(field)
                 
                 # Generate ID for new subtask
                 subtask_id = str(uuid.uuid4())
@@ -276,27 +363,100 @@ class TaskDecomposer:
                     priority=subtask_data.get("priority", 1)
                 )
                 
+                # Track subtask creation details for tracing
+                subtask_creation_details.append({
+                    "subtask_id": subtask_id,
+                    "subtask_name": subtask_data["name"],
+                    "is_primitive": subtask_data["is_primitive"],
+                    "missing_fields": missing_fields,
+                    "has_dependencies": "dependencies" in subtask_data and len(subtask_data.get("dependencies", [])) > 0
+                })
+                
                 subtasks.append(subtask)
+            
+            # Save subtask creation trace
+            if TRACING_ENABLED:
+                create_metadata = {
+                    "decomposition_id": decomposition_id,
+                    "task_id": task.id,
+                    "task_name": task.name,
+                    "subtask_count": len(subtasks)
+                }
+                save_trace("subtasks_created", subtask_creation_details, create_metadata)
             
             # Resolve dependencies now that all subtasks are created
             logger.info(f"Resolving dependencies for {len(subtasks)} subtasks")
+            dependency_resolution_details = []
             
             for i, subtask_data in enumerate(decomposition["subtasks"]):
                 dependency_names = subtask_data.get("dependencies", [])
                 dependency_ids = set()
                 
+                missing_deps = []
+                resolved_deps = []
+                
                 for dep_name in dependency_names:
                     if dep_name in created_subtasks:
-                        dependency_ids.add(created_subtasks[dep_name])
+                        dep_id = created_subtasks[dep_name]
+                        dependency_ids.add(dep_id)
+                        resolved_deps.append({"name": dep_name, "id": dep_id})
                     else:
                         logger.warning(f"Referenced dependency '{dep_name}' not found in created subtasks")
+                        missing_deps.append(dep_name)
                 
                 subtasks[i].dependencies = dependency_ids
                 logger.debug(f"Subtask {subtasks[i].name} has dependencies: {dependency_ids}")
+                
+                # Track dependency resolution for tracing
+                dependency_resolution_details.append({
+                    "subtask_id": subtasks[i].id,
+                    "subtask_name": subtasks[i].name,
+                    "requested_dependencies": dependency_names,
+                    "resolved_dependencies": list(dependency_ids),
+                    "missing_dependencies": missing_deps,
+                    "successfully_resolved": len(missing_deps) == 0
+                })
+            
+            # Save dependency resolution trace
+            if TRACING_ENABLED:
+                deps_metadata = {
+                    "decomposition_id": decomposition_id,
+                    "task_id": task.id,
+                    "task_name": task.name,
+                    "subtask_count": len(subtasks)
+                }
+                save_trace("dependencies_resolved", dependency_resolution_details, deps_metadata)
             
             # Update parent task with subtask references
             task.subtasks = [subtask.id for subtask in subtasks]
             logger.info(f"Task {task.id} decomposed into {len(subtasks)} subtasks")
+            
+            # Save final decomposition result trace
+            if TRACING_ENABLED:
+                final_metadata = {
+                    "decomposition_id": decomposition_id,
+                    "task_id": task.id,
+                    "task_name": task.name,
+                    "subtask_count": len(subtasks),
+                    "status": "success"
+                }
+                final_result = {
+                    "parent_task": {
+                        "id": task.id,
+                        "name": task.name,
+                        "description": task.description
+                    },
+                    "subtasks": [
+                        {
+                            "id": subtask.id, 
+                            "name": subtask.name,
+                            "is_primitive": subtask.is_primitive,
+                            "dependencies": list(subtask.dependencies)
+                        } 
+                        for subtask in subtasks
+                    ]
+                }
+                save_trace("task_decomposition_complete", final_result, final_metadata)
             
             return subtasks
             

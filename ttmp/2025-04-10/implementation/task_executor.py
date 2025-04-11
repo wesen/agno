@@ -4,11 +4,28 @@ Task execution for HTN Planning Agent.
 
 import json
 import re
+import os
+import uuid
 import logging
+import datetime
 from typing import Any, Dict, Optional, List
 
 # Configure logging
 logger = logging.getLogger('htn_agent.task_executor')
+
+# Import tracing functionality if available
+try:
+    from real_agno import save_trace
+    TRACING_ENABLED = True
+    logger.info("Trace logging enabled for task executor")
+except ImportError:
+    TRACING_ENABLED = False
+    logger.warning("Trace logging not available for task executor")
+    
+    # Define a dummy function if real save_trace isn't available
+    def save_trace(trace_type: str, content: Any, metadata: Dict = None) -> str:
+        """Dummy trace function when real tracing is not available."""
+        return None
 
 # Import real Agno wrapper if available
 try:
@@ -168,6 +185,9 @@ class TaskExecutor:
         sys.path.append(os.path.dirname(os.path.abspath(__file__)))
         from task_primitives import TaskStatus
         
+        # Create unique execution ID for tracing
+        execution_id = str(uuid.uuid4())
+        
         logger.info(f"Executing task: {task.id} - {task.name}")
         
         # Mark task as in progress
@@ -184,6 +204,20 @@ class TaskExecutor:
                 logger.debug(f"Including results from dependency {dep_id}")
             else:
                 logger.warning(f"Dependency {dep_id} has no results available")
+        
+        # Save dependency trace if enabled
+        if TRACING_ENABLED:
+            dependency_trace = {
+                "task_id": task.id,
+                "task_name": task.name,
+                "dependency_count": len(task.dependencies),
+                "dependencies_with_results": len(dependency_results),
+                "dependency_ids": list(task.dependencies)
+            }
+            save_trace("task_execution_dependencies", dependency_trace, {
+                "execution_id": execution_id,
+                "task_id": task.id
+            })
         
         # Prepare prompt for the task execution
         prompt = f"""
@@ -215,6 +249,17 @@ class TaskExecutor:
         Perform the task described above and provide your results below.
         """
         
+        # Save execution request trace
+        if TRACING_ENABLED:
+            request_metadata = {
+                "execution_id": execution_id,
+                "task_id": task.id,
+                "task_name": task.name,
+                "task_description": task.description,
+                "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            }
+            save_trace("task_execution_request", prompt, request_metadata)
+        
         # Track retries
         max_retries = 3
         retries = 0
@@ -223,9 +268,33 @@ class TaskExecutor:
             try:
                 # Execute task using agent
                 logger.info(f"Sending execution request for task {task.id} (attempt {retries + 1}/{max_retries + 1})")
+                
+                # Trace the execution attempt
+                if TRACING_ENABLED:
+                    attempt_metadata = {
+                        "execution_id": execution_id,
+                        "task_id": task.id,
+                        "attempt": retries + 1,
+                        "max_attempts": max_retries + 1,
+                        "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    }
+                    save_trace("task_execution_attempt", f"Attempt {retries + 1} of {max_retries + 1}", attempt_metadata)
+                
                 response = await self.agent.arun(prompt)
                 result = response.content
                 logger.info(f"Successfully executed task {task.id}")
+                
+                # Trace the execution response
+                if TRACING_ENABLED:
+                    response_metadata = {
+                        "execution_id": execution_id,
+                        "task_id": task.id,
+                        "task_name": task.name,
+                        "attempt": retries + 1,
+                        "successful": True,
+                        "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    }
+                    save_trace("task_execution_response", result, response_metadata)
                 
                 # Update state with results
                 if re.search(r"search|research|find", task.name, re.IGNORECASE):
@@ -242,8 +311,29 @@ class TaskExecutor:
                         
                         for fact_key, fact_value in facts.items():
                             state.update_facts(fact_key, fact_value)
+                        
+                        # Trace the extracted facts
+                        if TRACING_ENABLED:
+                            facts_metadata = {
+                                "execution_id": execution_id,
+                                "task_id": task.id,
+                                "task_type": "research",
+                                "fact_count": len(facts),
+                                "source_id": source_id
+                            }
+                            save_trace("task_facts_extracted", facts, facts_metadata)
                     except Exception as fact_error:
                         logger.error(f"Error extracting facts: {str(fact_error)}")
+                        
+                        # Trace the fact extraction error
+                        if TRACING_ENABLED:
+                            error_metadata = {
+                                "execution_id": execution_id,
+                                "task_id": task.id,
+                                "error_type": "fact_extraction",
+                                "error_message": str(fact_error)
+                            }
+                            save_trace("task_facts_extraction_error", str(fact_error), error_metadata)
                 
                 if re.search(r"write|draft|create|outline", task.name, re.IGNORECASE):
                     # For writing tasks, add to sections
@@ -256,6 +346,16 @@ class TaskExecutor:
                                     .replace("conclusion", "Conclusion"))
                     state.add_section(section_name, result)
                     logger.info(f"Added writing results to section: {section_name}")
+                    
+                    # Trace the section creation
+                    if TRACING_ENABLED:
+                        section_metadata = {
+                            "execution_id": execution_id,
+                            "task_id": task.id,
+                            "task_type": "writing",
+                            "section_name": section_name
+                        }
+                        save_trace("task_section_created", {"section_name": section_name, "content_length": len(result)}, section_metadata)
                 
                 # Update task status in state
                 state.task_status[task.id] = TaskStatus.COMPLETED.value
@@ -266,11 +366,34 @@ class TaskExecutor:
                 # Update the task object's status
                 task.status = TaskStatus.COMPLETED
                 
+                # Trace the task completion
+                if TRACING_ENABLED:
+                    completion_metadata = {
+                        "execution_id": execution_id,
+                        "task_id": task.id,
+                        "task_name": task.name,
+                        "status": "COMPLETED",
+                        "attempts": retries + 1,
+                        "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    }
+                    save_trace("task_execution_completed", {"result_length": len(result)}, completion_metadata)
+                
                 return result
                 
             except Exception as e:
                 retries += 1
                 logger.warning(f"Error executing task {task.id} (attempt {retries}/{max_retries + 1}): {str(e)}")
+                
+                # Trace the execution error
+                if TRACING_ENABLED:
+                    error_metadata = {
+                        "execution_id": execution_id,
+                        "task_id": task.id,
+                        "attempt": retries,
+                        "error_type": type(e).__name__,
+                        "error_message": str(e)
+                    }
+                    save_trace("task_execution_error", str(e), error_metadata)
                 
                 if retries <= max_retries:
                     logger.info(f"Retrying task execution...")
@@ -285,6 +408,20 @@ class TaskExecutor:
                     
                     error_message = f"Failed to execute task after {max_retries + 1} attempts: {str(e)}"
                     state.task_results[task.id] = error_message
+                    
+                    # Trace the final failure
+                    if TRACING_ENABLED:
+                        failure_metadata = {
+                            "execution_id": execution_id,
+                            "task_id": task.id,
+                            "task_name": task.name,
+                            "status": "FAILED",
+                            "attempts": retries,
+                            "final_error": str(e),
+                            "timestamp": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                        }
+                        save_trace("task_execution_failed", error_message, failure_metadata)
+                    
                     return error_message
     
     def _extract_facts(self, content: str) -> Dict[str, str]:

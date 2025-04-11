@@ -92,6 +92,7 @@ Command-line options:
 --model          LLM model to use (default: "claude-3-sonnet-20240229")
 --api-key-env    Environment variable name for API key (default: "ANTHROPIC_API_KEY")
 --adaptation-frequency  How often to adapt the plan (default: 2)
+--debug          Enable debug logging (saves detailed traces to traces/ directory)
 ```
 
 ## Using in Your Own Code
@@ -154,6 +155,31 @@ Detailed logging is implemented throughout the codebase:
 - Both console and file logging
 - Configurable log levels
 - Contextual information in log messages
+
+### Tracing
+
+The implementation includes an extensive tracing system that saves detailed information about each step of the planning and execution process to JSON files in the `traces/` directory:
+
+- **LLM Interactions**: All prompts sent to the LLM and their responses are saved
+- **Task Decomposition**: The process of breaking down tasks, including raw and parsed JSON responses
+- **Task Execution**: Details about task execution, including retry attempts and results
+- **Error Handling**: Comprehensive error information, including retry attempts and stack traces
+- **JSON Parsing**: The entire JSON parsing process is traced, showing each attempt and method
+- **Run Metrics**: Overall metrics for each run, including durations, task counts, and success rates
+
+To enable more verbose tracing, use the `--debug` flag:
+
+```bash
+python real_agno_demo.py --topic "Quantum Computing" --debug
+```
+
+Alternatively, set the LOG_LEVEL environment variable:
+
+```bash
+LOG_LEVEL=DEBUG python real_agno_demo.py
+```
+
+The traces are saved as JSON files in the `traces/` directory with timestamps and unique IDs, making it easy to analyze the execution flow and debug issues.
 
 ## Architecture
 
