@@ -138,3 +138,1039 @@ TypeError: Claude.__init__() got an unexpected keyword argument 'model'
 2025-04-10 19:58:36,919 - htn_agent_demo - INFO - 
 ===== Demo Complete =====
 
+2025-04-10 20:11:06,146 - htn_agent.task_decomposer - INFO - Trace logging enabled for task decomposer
+2025-04-10 20:11:06,148 - htn_agent.task_executor - INFO - Trace logging enabled for task executor
+2025-04-10 20:11:28,940 - htn_agent.task_decomposer - INFO - Trace logging enabled for task decomposer
+2025-04-10 20:11:28,940 - htn_agent.task_executor - INFO - Trace logging enabled for task executor
+2025-04-10 20:11:28,942 - htn_agent_demo - INFO - Debug logging enabled
+2025-04-10 20:11:28,943 - asyncio - DEBUG - Using selector: EpollSelector
+2025-04-10 20:11:28,943 - htn_agent_demo - INFO - Trace logging enabled for demo run run_336859
+2025-04-10 20:11:28,943 - htn_agent_demo - INFO - Starting HTN Planning Agent demo with claude-3-5-haiku-latest (Run ID: run_336859)
+2025-04-10 20:11:28,943 - htn_agent - DEBUG - Saved demo_run_start trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201128_943333_demo_run_start_0313ce34.json
+2025-04-10 20:11:28,943 - htn_agent_demo - INFO - Creating Agno agent with model: claude-3-5-haiku-latest
+2025-04-10 20:11:29,219 - htn_agent - INFO - Created Claude model: claude-3-5-haiku-latest
+2025-04-10 20:11:29,219 - htn_agent - INFO - Created Agno agent with claude-3-5-haiku-latest
+2025-04-10 20:11:29,219 - htn_agent - INFO - Initialized AgnoAgentWrapper with Agent
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - Creating HTN Planning Agent
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - 
+===== HTN Planning Agent Demo =====
+
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - Topic: Quantum Computing
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - Goal: explains recent developments and future prospects
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - Max Steps: 3
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - Model: claude-3-5-haiku-latest
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - Plan Adaptation Frequency: Every 2 tasks
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - 
+===== Planning & Execution =====
+
+2025-04-10 20:11:29,219 - htn_agent_demo - INFO - Starting research and report generation process
+2025-04-10 20:11:29,219 - htn_agent.task_decomposer - INFO - Decomposing task: 43798f50-818d-4014-8814-02d6d3d612bf - Research and Write Report on Quantum Computing
+2025-04-10 20:11:29,219 - htn_agent - DEBUG - Saved task_decomposition_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201129_219582_task_decomposition_request_41c7d94f.json
+2025-04-10 20:11:29,219 - htn_agent.task_decomposer - INFO - Sending decomposition request for task 43798f50-818d-4014-8814-02d6d3d612bf
+2025-04-10 20:11:29,219 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201129_219762_prompt_65fedced.json
+2025-04-10 20:11:29,219 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Decomposition Request
+        
+        You need to break down the following task int...
+2025-04-10 20:11:29,255 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Decomposition Request\n        \n        You need to break down the following task into smaller, more manageable subtasks.\n        \n        ## Current Task\n        Name: Research and Write Report on Quantum Computing\n        Description: Research the topic \'Quantum Computing\' and create a comprehensive report that explains recent developments and future prospects\n        \n        ## Current State\n        \n        Topic: Quantum Computing\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 0\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        \n        \n        \n        ## Decomposition Requirements\n        \n        1. Break this task down into 3-7 subtasks that together will accomplish the parent task\n        2. For each subtask, provide:\n           - A clear, concise name\n           - A detailed description\n           - Whether it\'s a primitive task (can be directly executed) or needs further decomposition\n           - Dependencies (IDs of other subtasks it depends on)\n           - Estimated time to complete (in minutes)\n           - Priority (1-5, with 5 being highest)\n        \n        ## Output Format\n        \n        Your response MUST be valid JSON with no extra text or explanation outside the JSON structure.\n        \n        Provide your response in the following JSON format:\n        \n        ```json\n        {\n          "subtasks": [\n            {\n              "name": "Subtask name",\n              "description": "Detailed description",\n              "is_primitive": true or false,\n              "dependencies": ["id1", "id2"],\n              "estimated_time": 15,\n              "priority": 3\n            }\n          ]\n        }\n        ```\n        \n        Note: For the first subtask, the dependencies list should be empty since there are no other subtasks yet.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:11:29,258 - httpcore.connection - DEBUG - connect_tcp.started host='api.anthropic.com' port=443 local_address=None timeout=5.0 socket_options=[(1, 9, True), (6, 5, 60), (6, 6, 5), (6, 4, 60)]
+2025-04-10 20:11:29,283 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea3b9a90>
+2025-04-10 20:11:29,283 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x712bea50ade0> server_hostname='api.anthropic.com' timeout=5.0
+2025-04-10 20:11:29,312 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea3a7f10>
+2025-04-10 20:11:29,312 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:29,312 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:11:29,312 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:11:29,312 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:11:29,312 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:39,206 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:11:39 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:11:29Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:11:32Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:11:39Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:11:32Z'), (b'request-id', b'req_01DmECPBfinKC7u77KjvLTU6'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e644544c540a87-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:11:39,207 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:11:39,207 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:11:39,207 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:11:39,207 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:11:39,207 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:11:39,207 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:11:39,241 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:11:39,299 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea40a450>
+2025-04-10 20:11:39,299 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x712bea3e70b0> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:11:39,353 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea40b050>
+2025-04-10 20:11:39,354 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:39,354 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:11:39,354 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:11:39,354 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:11:39,354 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:39,389 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:11:39 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:11:39,390 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:11:39,390 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:11:39,390 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:11:39,390 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:11:39,390 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:11:39,390 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:11:39,390 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:11:39,391 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_390960_response_0281a539.json
+2025-04-10 20:11:39,391 - htn_agent - INFO - Received response from agent
+2025-04-10 20:11:39,391 - htn_agent - DEBUG - Response content: {
+  "subtasks": [
+    {
+      "id": "st1",
+      "name": "Define Research Scope and Objectives",
+      "description": "Outline specific research questions, key areas of focus for quantum computing, an...
+2025-04-10 20:11:39,391 - htn_agent - DEBUG - Saved task_decomposition_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_391208_task_decomposition_response_37c739b8.json
+2025-04-10 20:11:39,391 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 20:11:39,391 - htn_agent - DEBUG - Saved json_parsing_input trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_391344_json_parsing_input_3d83b587.json
+2025-04-10 20:11:39,391 - htn_agent - DEBUG - Found JSON object pattern
+2025-04-10 20:11:39,391 - htn_agent - DEBUG - Saved json_parsing_result trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_391616_json_parsing_result_758aa348.json
+2025-04-10 20:11:39,391 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task 43798f50-818d-4014-8814-02d6d3d612bf
+2025-04-10 20:11:39,391 - htn_agent.task_decomposer - DEBUG - Extracted JSON: {'subtasks': [{'id': 'st1', 'name': 'Define Research Scope and Objectives', 'description': "Outline specific research questions, key areas of focus for quantum computing, and establish the report's preliminary structure", 'is_primitive': True, 'dependencies': [], 'estimated_time': 30, 'priority': 5}, {'id': 'st2', 'name': 'Conduct Comprehensive Literature Review', 'description': 'Gather academic papers, industry reports, and authoritative sources on quantum computing developments, including current technologies, key research institutions, and recent breakthroughs', 'is_primitive': False, 'dependencies': ['st1'], 'estimated_time': 120, 'priority': 4}, {'id': 'st3', 'name': 'Analyze and Synthesize Research Findings', 'description': 'Organize collected research materials, identify key themes, technological advancements, and potential future implications of quantum computing', 'is_primitive': True, 'dependencies': ['st2'], 'estimated_time': 90, 'priority': 4}, {'id': 'st4', 'name': 'Draft Initial Report Sections', 'description': 'Create preliminary draft of report sections including introduction, current state of quantum computing, key technologies, challenges, and future prospects', 'is_primitive': True, 'dependencies': ['st3'], 'estimated_time': 120, 'priority': 3}, {'id': 'st5', 'name': 'Review and Refine Report', 'description': 'Edit draft, ensure technical accuracy, improve clarity, add citations, and prepare final version of the report', 'is_primitive': True, 'dependencies': ['st4'], 'estimated_time': 60, 'priority': 2}]}
+2025-04-10 20:11:39,391 - htn_agent - DEBUG - Saved task_decomposition_parsed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_391856_task_decomposition_parsed_ba5712c6.json
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - INFO - Creating 5 subtasks for task 43798f50-818d-4014-8814-02d6d3d612bf
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Creating subtask: Define Research Scope and Objectives
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Creating subtask: Conduct Comprehensive Literature Review
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Creating subtask: Analyze and Synthesize Research Findings
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Creating subtask: Draft Initial Report Sections
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Creating subtask: Review and Refine Report
+2025-04-10 20:11:39,392 - htn_agent - DEBUG - Saved subtasks_created trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_392207_subtasks_created_ebfb1ef3.json
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - INFO - Resolving dependencies for 5 subtasks
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Subtask Define Research Scope and Objectives has dependencies: set()
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st1' not found in created subtasks
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Subtask Conduct Comprehensive Literature Review has dependencies: set()
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st2' not found in created subtasks
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Subtask Analyze and Synthesize Research Findings has dependencies: set()
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st3' not found in created subtasks
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Subtask Draft Initial Report Sections has dependencies: set()
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - WARNING - Referenced dependency 'st4' not found in created subtasks
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - DEBUG - Subtask Review and Refine Report has dependencies: set()
+2025-04-10 20:11:39,392 - htn_agent - DEBUG - Saved dependencies_resolved trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_392585_dependencies_resolved_88114076.json
+2025-04-10 20:11:39,392 - htn_agent.task_decomposer - INFO - Task 43798f50-818d-4014-8814-02d6d3d612bf decomposed into 5 subtasks
+2025-04-10 20:11:39,392 - htn_agent - DEBUG - Saved task_decomposition_complete trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_392755_task_decomposition_complete_3ee2a3c8.json
+2025-04-10 20:11:39,392 - htn_agent.task_executor - INFO - Executing task: 0bbb6959-3c37-408b-b82f-c53b85a4fb4e - Define Research Scope and Objectives
+2025-04-10 20:11:39,393 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_392959_task_execution_dependencies_1517caf5.json
+2025-04-10 20:11:39,393 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_393061_task_execution_request_874ce288.json
+2025-04-10 20:11:39,393 - htn_agent.task_executor - INFO - Sending execution request for task 0bbb6959-3c37-408b-b82f-c53b85a4fb4e (attempt 1/4)
+2025-04-10 20:11:39,393 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_393186_task_execution_attempt_6929aa79.json
+2025-04-10 20:11:39,393 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201139_393276_prompt_a8460f70.json
+2025-04-10 20:11:39,393 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:11:39,395 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': "\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Define Research Scope and Objectives\n        Description: Outline specific research questions, key areas of focus for quantum computing, and establish the report's preliminary structure\n        \n        ## Current State\n        \n        Topic: Quantum Computing\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 0\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        \n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        "}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:11:39,396 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:39,396 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:11:39,396 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:11:39,396 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:11:39,396 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:49,939 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:11:49 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:11:39Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:11:40Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:11:49Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:11:40Z'), (b'request-id', b'req_01P8FZc9WVbyU4YoKzMcHbHE'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e6449349ee0a87-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:11:49,939 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:11:49,940 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:11:49,941 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:11:49,941 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:11:49,941 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:11:49,941 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:11:49,962 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:11:49,990 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea27ad50>
+2025-04-10 20:11:49,990 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x712bea3e7260> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:11:50,047 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea27ad90>
+2025-04-10 20:11:50,047 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:50,047 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:11:50,047 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:11:50,047 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:11:50,048 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:50,078 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:11:50 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:11:50,078 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:11:50,078 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:11:50,078 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:11:50,078 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:11:50,078 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:11:50,078 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:11:50,078 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:11:50,079 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201150_079183_response_be0d3727.json
+2025-04-10 20:11:50,079 - htn_agent - INFO - Received response from agent
+2025-04-10 20:11:50,079 - htn_agent - DEBUG - Response content: I'll help define the research scope and objectives for the quantum computing report by breaking this down systematically:
+
+# Research Scope and Objectives for Quantum Computing Report
+
+## Research Que...
+2025-04-10 20:11:50,079 - htn_agent.task_executor - INFO - Successfully executed task 0bbb6959-3c37-408b-b82f-c53b85a4fb4e
+2025-04-10 20:11:50,079 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201150_079451_task_execution_response_99d0b5d2.json
+2025-04-10 20:11:50,079 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 20:11:50,079 - htn_agent.task_executor - INFO - Extracted 10 facts from research
+2025-04-10 20:11:50,079 - htn_agent.task_executor - DEBUG - Extracted facts: {'fact_1': 'Comprehensive literature review', 'fact_2': 'Analysis of current technological capabilities', 'fact_3': 'Synthesis of expert perspectives', 'fact_4': 'Critical evaluation of source materials', 'Research Scope and Objectives for Quantum Computing Report': '', 'Research Questions': '1. How does quantum computing fundamentally differ from classical computing?\n2. What are the current technological capabilities and limitations of quantum computing?\n3. What potential real-world applications could quantum computing revolutionize?\n4. What are the major challenges in developing practical quantum computers?', 'Key Areas of Focus': '1. Quantum Computing Fundamentals\n   - Quantum mechanics principles\n   - Qubits vs. classical bits\n   - Quantum superposition and entanglement', 'Preliminary Report Structure': '1. Introduction\n   - Definition of quantum computing\n   - Historical context', 'Preliminary Sources to Explore': '1. Academic journals (Nature, Science)\n2. Research publications from:\n   - IBM Quantum\n   - Google Quantum AI\n   - MIT Quantum Engineering Group\n   - Nature Research Quantum Resources\n3. Specialized quantum computing publications\n4. Technical reports from leading tech companies', 'Research Methodology': '- Comprehensive literature review\n- Analysis of current technological capabilities\n- Synthesis of expert perspectives\n- Critical evaluation of source materials'}
+2025-04-10 20:11:50,080 - htn_agent - DEBUG - Saved task_facts_extracted trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201150_080015_task_facts_extracted_1f3ec6ec.json
+2025-04-10 20:11:50,080 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201150_080230_task_execution_completed_bbb2ba7a.json
+2025-04-10 20:11:50,080 - htn_agent.task_decomposer - INFO - Decomposing task: ae92d6bd-c00e-431f-a07c-eef6ad6e23b5 - Conduct Comprehensive Literature Review
+2025-04-10 20:11:50,080 - htn_agent - DEBUG - Saved task_decomposition_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201150_080401_task_decomposition_request_b3076a3b.json
+2025-04-10 20:11:50,080 - htn_agent.task_decomposer - INFO - Sending decomposition request for task ae92d6bd-c00e-431f-a07c-eef6ad6e23b5
+2025-04-10 20:11:50,080 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201150_080531_prompt_b85761cb.json
+2025-04-10 20:11:50,080 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Decomposition Request
+        
+        You need to break down the following task int...
+2025-04-10 20:11:50,082 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Decomposition Request\n        \n        You need to break down the following task into smaller, more manageable subtasks.\n        \n        ## Current Task\n        Name: Conduct Comprehensive Literature Review\n        Description: Gather academic papers, industry reports, and authoritative sources on quantum computing developments, including current technologies, key research institutions, and recent breakthroughs\n        \n        ## Current State\n        \n        Topic: Quantum Computing\n        \n        Facts Gathered: 10\n        Sources Found: 1\n        Report Sections: 0\n        \n        Facts Summary:\n        - fact_1: Comprehensive literature review\n- fact_2: Analysis of current technological capabilities\n- fact_3: Synthesis of expert perspectives\n- fact_4: Critical evaluation of source materials\n- Research Scope and Objectives for Quantum Computing Report: \n- Research Questions: 1. How does quantum computing fundamentally differ from classical computing?\n2. What are the current technological capabilities and limitations of quantum computing?\n3. What potential real-world applications could quantum computing revolutionize?\n4. What are the major challenges in developing practical quantum computers?\n- Key Areas of Focus: 1. Quantum Computing Fundamentals\n   - Quantum mechanics principles\n   - Qubits vs. classical bits\n   - Quantum superposition and entanglement\n- Preliminary Report Structure: 1. Introduction\n   - Definition of quantum computing\n   - Historical context\n- Preliminary Sources to Explore: 1. Academic journals (Nature, Science)\n2. Research publications from:\n   - IBM Quantum\n   - Google Quantum AI\n   - MIT Quantum Engineering Group\n   - Nature Research Quantum Resources\n3. Specialized quantum computing publications\n4. Technical reports from leading tech companies\n- Research Methodology: - Comprehensive literature review\n- Analysis of current technological capabilities\n- Synthesis of expert perspectives\n- Critical evaluation of source materials\n        \n        Sources:\n        source_1\n        \n        Completed Sections:\n        \n        \n        \n        ## Decomposition Requirements\n        \n        1. Break this task down into 3-7 subtasks that together will accomplish the parent task\n        2. For each subtask, provide:\n           - A clear, concise name\n           - A detailed description\n           - Whether it\'s a primitive task (can be directly executed) or needs further decomposition\n           - Dependencies (IDs of other subtasks it depends on)\n           - Estimated time to complete (in minutes)\n           - Priority (1-5, with 5 being highest)\n        \n        ## Output Format\n        \n        Your response MUST be valid JSON with no extra text or explanation outside the JSON structure.\n        \n        Provide your response in the following JSON format:\n        \n        ```json\n        {\n          "subtasks": [\n            {\n              "name": "Subtask name",\n              "description": "Detailed description",\n              "is_primitive": true or false,\n              "dependencies": ["id1", "id2"],\n              "estimated_time": 15,\n              "priority": 3\n            }\n          ]\n        }\n        ```\n        \n        Note: For the first subtask, the dependencies list should be empty since there are no other subtasks yet.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:11:50,082 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:50,083 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:11:50,083 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:11:50,083 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:11:50,083 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:59,811 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:11:59 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:11:50Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:11:52Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:11:59Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:11:52Z'), (b'request-id', b'req_01NdFzRtfbDy3KeDNQ9TSYQK'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e644d61c3d0a87-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:11:59,812 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:11:59,812 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:11:59,812 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:11:59,812 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:11:59,812 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:11:59,812 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:11:59,833 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:11:59,858 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea278290>
+2025-04-10 20:11:59,858 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x712bea3e70b0> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:11:59,904 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x712bea2788d0>
+2025-04-10 20:11:59,905 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:59,905 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:11:59,905 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:11:59,905 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:11:59,905 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:11:59,935 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:11:59 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:11:59,935 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:11:59,935 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:11:59,935 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:11:59,935 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:11:59,935 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:11:59,936 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:11:59,936 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:11:59,936 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_936334_response_59a014aa.json
+2025-04-10 20:11:59,936 - htn_agent - INFO - Received response from agent
+2025-04-10 20:11:59,936 - htn_agent - DEBUG - Response content: {
+  "subtasks": [
+    {
+      "id": "ST1",
+      "name": "Source Collection and Identification",
+      "description": "Compile comprehensive list of academic journals, research publications, technical...
+2025-04-10 20:11:59,936 - htn_agent - DEBUG - Saved task_decomposition_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_936575_task_decomposition_response_1ebe01eb.json
+2025-04-10 20:11:59,936 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 20:11:59,936 - htn_agent - DEBUG - Saved json_parsing_input trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_936702_json_parsing_input_4afe9f17.json
+2025-04-10 20:11:59,936 - htn_agent - DEBUG - Found JSON object pattern
+2025-04-10 20:11:59,936 - htn_agent - DEBUG - Saved json_parsing_result trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_936847_json_parsing_result_d9b62871.json
+2025-04-10 20:11:59,936 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task ae92d6bd-c00e-431f-a07c-eef6ad6e23b5
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Extracted JSON: {'subtasks': [{'id': 'ST1', 'name': 'Source Collection and Identification', 'description': 'Compile comprehensive list of academic journals, research publications, technical reports, and authoritative sources on quantum computing', 'is_primitive': False, 'dependencies': [], 'estimated_time': 60, 'priority': 5}, {'id': 'ST2', 'name': 'Source Evaluation and Screening', 'description': 'Review and critically assess collected sources for relevance, credibility, and recency of quantum computing information', 'is_primitive': True, 'dependencies': ['ST1'], 'estimated_time': 45, 'priority': 4}, {'id': 'ST3', 'name': 'Information Extraction and Note Taking', 'description': 'Extract key insights, technological capabilities, research findings, and expert perspectives from selected sources', 'is_primitive': True, 'dependencies': ['ST1', 'ST2'], 'estimated_time': 90, 'priority': 4}, {'id': 'ST4', 'name': 'Thematic Analysis and Synthesis', 'description': 'Organize extracted information into coherent themes covering quantum computing fundamentals, technological capabilities, challenges, and potential applications', 'is_primitive': True, 'dependencies': ['ST3'], 'estimated_time': 60, 'priority': 5}, {'id': 'ST5', 'name': 'Literature Review Drafting', 'description': 'Compose comprehensive literature review draft integrating synthesized information with critical analysis and academic writing standards', 'is_primitive': True, 'dependencies': ['ST4'], 'estimated_time': 120, 'priority': 5}, {'id': 'ST6', 'name': 'Review and Refinement', 'description': 'Conduct internal review, validate citations, ensure academic rigor, and refine literature review draft', 'is_primitive': True, 'dependencies': ['ST5'], 'estimated_time': 45, 'priority': 3}]}
+2025-04-10 20:11:59,937 - htn_agent - DEBUG - Saved task_decomposition_parsed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_937072_task_decomposition_parsed_7f24a7a6.json
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - INFO - Creating 6 subtasks for task ae92d6bd-c00e-431f-a07c-eef6ad6e23b5
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Creating subtask: Source Collection and Identification
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Creating subtask: Source Evaluation and Screening
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Creating subtask: Information Extraction and Note Taking
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Creating subtask: Thematic Analysis and Synthesis
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Creating subtask: Literature Review Drafting
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Creating subtask: Review and Refinement
+2025-04-10 20:11:59,937 - htn_agent - DEBUG - Saved subtasks_created trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_937442_subtasks_created_7888d002.json
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - INFO - Resolving dependencies for 6 subtasks
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Subtask Source Collection and Identification has dependencies: set()
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST1' not found in created subtasks
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Subtask Source Evaluation and Screening has dependencies: set()
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST1' not found in created subtasks
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST2' not found in created subtasks
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Subtask Information Extraction and Note Taking has dependencies: set()
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST3' not found in created subtasks
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Subtask Thematic Analysis and Synthesis has dependencies: set()
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST4' not found in created subtasks
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Subtask Literature Review Drafting has dependencies: set()
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST5' not found in created subtasks
+2025-04-10 20:11:59,937 - htn_agent.task_decomposer - DEBUG - Subtask Review and Refinement has dependencies: set()
+2025-04-10 20:11:59,938 - htn_agent - DEBUG - Saved dependencies_resolved trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_937891_dependencies_resolved_76872e98.json
+2025-04-10 20:11:59,938 - htn_agent.task_decomposer - INFO - Task ae92d6bd-c00e-431f-a07c-eef6ad6e23b5 decomposed into 6 subtasks
+2025-04-10 20:11:59,938 - htn_agent - DEBUG - Saved task_decomposition_complete trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_938070_task_decomposition_complete_5186d924.json
+2025-04-10 20:11:59,938 - htn_agent - DEBUG - Saved demo_execution_metrics trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_938231_demo_execution_metrics_2738aa11.json
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - 
+===== Final Report =====
+
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - Plan execution reached maximum steps (3). Partial results available.
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - 
+===== Plan Structure =====
+
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - # Current Plan Structure
+
+🔄 Research and Write Report on Quantum Computing (43798f...)
+  ✓ Define Research Scope and Objectives (0bbb69...)
+  🔄 Conduct Comprehensive Literature Review (ae92d6...)
+    ⏱️ Source Collection and Identification (79452a...)
+    ⏱️ Source Evaluation and Screening (8e43a8...)
+    ⏱️ Information Extraction and Note Taking (30cbc3...)
+    ⏱️ Thematic Analysis and Synthesis (97e096...)
+    ⏱️ Literature Review Drafting (c9ff31...)
+    ⏱️ Review and Refinement (4c8d23...)
+  ✅ Analyze and Synthesize Research Findings (4f55dc...)
+  ✅ Draft Initial Report Sections (fbdd7f...)
+  ✅ Review and Refine Report (daad88...)
+
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - 
+===== Plan Status =====
+
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - topic: Quantum Computing
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - total_tasks: 12
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - completed: 1
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - pending: 6
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - in_progress: 0
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - decomposing: 2
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - failed: 0
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - facts_gathered: 10
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - sources_found: 1
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - sections_written: 0
+2025-04-10 20:11:59,938 - htn_agent - DEBUG - Saved demo_final_plan_status trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_938731_demo_final_plan_status_359e6eba.json
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - 
+===== Facts Gathered =====
+
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - - fact_1: Comprehensive literature review
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - - fact_2: Analysis of current technological capabilities
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - - fact_3: Synthesis of expert perspectives
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - - fact_4: Critical evaluation of source materials
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - - Research Scope and Objectives for Quantum Computing Report: 
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - - Research Questions: 1. How does quantum computing fundamentally differ from classical computing?
+2. What are the current...
+2025-04-10 20:11:59,938 - htn_agent_demo - INFO - - Key Areas of Focus: 1. Quantum Computing Fundamentals
+   - Quantum mechanics principles
+   - Qubits vs. classical bits
+ ...
+2025-04-10 20:11:59,939 - htn_agent_demo - INFO - - Preliminary Report Structure: 1. Introduction
+   - Definition of quantum computing
+   - Historical context
+2025-04-10 20:11:59,939 - htn_agent_demo - INFO - - Preliminary Sources to Explore: 1. Academic journals (Nature, Science)
+2. Research publications from:
+   - IBM Quantum
+   - Google Q...
+2025-04-10 20:11:59,939 - htn_agent_demo - INFO - - Research Methodology: - Comprehensive literature review
+- Analysis of current technological capabilities
+- Synthesis of ex...
+2025-04-10 20:11:59,939 - htn_agent - DEBUG - Saved demo_facts_gathered trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_939078_demo_facts_gathered_24bb9a3e.json
+2025-04-10 20:11:59,939 - htn_agent_demo - INFO - 
+===== Demo Complete =====
+2025-04-10 20:11:59,939 - htn_agent_demo - INFO - Run duration: 31.00 seconds
+2025-04-10 20:11:59,939 - htn_agent - DEBUG - Saved demo_run_complete trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201159_939239_demo_run_complete_dfa53f8f.json
+2025-04-10 20:14:40,971 - htn_agent.task_decomposer - INFO - Trace logging enabled for task decomposer
+2025-04-10 20:14:40,972 - htn_agent.task_executor - INFO - Trace logging enabled for task executor
+2025-04-10 20:14:40,974 - htn_agent_demo - INFO - Debug logging enabled
+2025-04-10 20:14:40,974 - asyncio - DEBUG - Using selector: EpollSelector
+2025-04-10 20:14:40,974 - htn_agent_demo - INFO - Trace logging enabled for demo run run_337051
+2025-04-10 20:14:40,974 - htn_agent_demo - INFO - Starting HTN Planning Agent demo with claude-3-5-haiku-latest (Run ID: run_337051)
+2025-04-10 20:14:40,974 - htn_agent - DEBUG - Saved demo_run_start trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201440_974846_demo_run_start_f30b21f9.json
+2025-04-10 20:14:40,975 - htn_agent_demo - INFO - Creating Agno agent with model: claude-3-5-haiku-latest
+2025-04-10 20:14:41,254 - htn_agent - INFO - Created Claude model: claude-3-5-haiku-latest
+2025-04-10 20:14:41,254 - htn_agent - INFO - Created Agno agent with claude-3-5-haiku-latest
+2025-04-10 20:14:41,254 - htn_agent - INFO - Initialized AgnoAgentWrapper with Agent
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - Creating HTN Planning Agent
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - 
+===== HTN Planning Agent Demo =====
+
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - Topic: Hierarchical Task Planning Network
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - Goal: explains recent developments and future prospects
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - Max Steps: 10
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - Model: claude-3-5-haiku-latest
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - Plan Adaptation Frequency: Every 2 tasks
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - 
+===== Planning & Execution =====
+
+2025-04-10 20:14:41,255 - htn_agent_demo - INFO - Starting research and report generation process
+2025-04-10 20:14:41,255 - htn_agent.task_decomposer - INFO - Decomposing task: da59bbfe-012c-4d15-a9a2-f30168ebb971 - Research and Write Report on Hierarchical Task Planning Network
+2025-04-10 20:14:41,255 - htn_agent - DEBUG - Saved task_decomposition_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201441_255366_task_decomposition_request_b9da128f.json
+2025-04-10 20:14:41,255 - htn_agent.task_decomposer - INFO - Sending decomposition request for task da59bbfe-012c-4d15-a9a2-f30168ebb971
+2025-04-10 20:14:41,255 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201441_255554_prompt_cac76c68.json
+2025-04-10 20:14:41,255 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Decomposition Request
+        
+        You need to break down the following task int...
+2025-04-10 20:14:41,292 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Decomposition Request\n        \n        You need to break down the following task into smaller, more manageable subtasks.\n        \n        ## Current Task\n        Name: Research and Write Report on Hierarchical Task Planning Network\n        Description: Research the topic \'Hierarchical Task Planning Network\' and create a comprehensive report that explains recent developments and future prospects\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 0\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        \n        \n        \n        ## Decomposition Requirements\n        \n        1. Break this task down into 3-7 subtasks that together will accomplish the parent task\n        2. For each subtask, provide:\n           - A clear, concise name\n           - A detailed description\n           - Whether it\'s a primitive task (can be directly executed) or needs further decomposition\n           - Dependencies (IDs of other subtasks it depends on)\n           - Estimated time to complete (in minutes)\n           - Priority (1-5, with 5 being highest)\n        \n        ## Output Format\n        \n        Your response MUST be valid JSON with no extra text or explanation outside the JSON structure.\n        \n        Provide your response in the following JSON format:\n        \n        ```json\n        {\n          "subtasks": [\n            {\n              "name": "Subtask name",\n              "description": "Detailed description",\n              "is_primitive": true or false,\n              "dependencies": ["id1", "id2"],\n              "estimated_time": 15,\n              "priority": 3\n            }\n          ]\n        }\n        ```\n        \n        Note: For the first subtask, the dependencies list should be empty since there are no other subtasks yet.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:14:41,295 - httpcore.connection - DEBUG - connect_tcp.started host='api.anthropic.com' port=443 local_address=None timeout=5.0 socket_options=[(1, 9, True), (6, 5, 60), (6, 6, 5), (6, 4, 60)]
+2025-04-10 20:14:41,319 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94aa19510>
+2025-04-10 20:14:41,319 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94ab6ade0> server_hostname='api.anthropic.com' timeout=5.0
+2025-04-10 20:14:41,347 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94b048c90>
+2025-04-10 20:14:41,347 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:14:41,347 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:14:41,347 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:14:41,348 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:14:41,348 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:14:52,324 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:14:52 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:14:41Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:14:43Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:14:52Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:14:43Z'), (b'request-id', b'req_01TTHTRdF7wFTKvosiocr8pM'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e649047e55c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:14:52,324 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:14:52,325 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:14:52,325 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:14:52,325 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:14:52,325 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:14:52,325 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:14:52,363 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:14:52,388 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94aaf5e10>
+2025-04-10 20:14:52,388 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa470b0> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:14:52,453 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94aaf7390>
+2025-04-10 20:14:52,453 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:14:52,453 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:14:52,454 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:14:52,454 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:14:52,454 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:14:52,485 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:14:52 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:14:52,486 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:14:52,486 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:14:52,486 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:14:52,486 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:14:52,486 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:14:52,486 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:14:52,486 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:14:52,487 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_486926_response_75288820.json
+2025-04-10 20:14:52,487 - htn_agent - INFO - Received response from agent
+2025-04-10 20:14:52,487 - htn_agent - DEBUG - Response content: {
+  "subtasks": [
+    {
+      "id": "ST1",
+      "name": "Initial Literature Review",
+      "description": "Conduct a comprehensive search of academic databases and journals to find recent publication...
+2025-04-10 20:14:52,487 - htn_agent - DEBUG - Saved task_decomposition_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_487180_task_decomposition_response_3c37b123.json
+2025-04-10 20:14:52,487 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 20:14:52,487 - htn_agent - DEBUG - Saved json_parsing_input trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_487323_json_parsing_input_7797b19d.json
+2025-04-10 20:14:52,487 - htn_agent - DEBUG - Found JSON object pattern
+2025-04-10 20:14:52,487 - htn_agent - DEBUG - Saved json_parsing_result trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_487608_json_parsing_result_b5bda86a.json
+2025-04-10 20:14:52,487 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task da59bbfe-012c-4d15-a9a2-f30168ebb971
+2025-04-10 20:14:52,487 - htn_agent.task_decomposer - DEBUG - Extracted JSON: {'subtasks': [{'id': 'ST1', 'name': 'Initial Literature Review', 'description': 'Conduct a comprehensive search of academic databases and journals to find recent publications, research papers, and conference proceedings about Hierarchical Task Planning Networks', 'is_primitive': True, 'dependencies': [], 'estimated_time': 90, 'priority': 5}, {'id': 'ST2', 'name': 'Source Compilation and Categorization', 'description': 'Organize and categorize gathered sources, create a bibliography, and extract key concepts, methodologies, and research findings related to Hierarchical Task Planning Networks', 'is_primitive': True, 'dependencies': ['ST1'], 'estimated_time': 60, 'priority': 4}, {'id': 'ST3', 'name': 'Technical Concept Analysis', 'description': 'Analyze the technical foundations, core mechanisms, and computational approaches of Hierarchical Task Planning Networks, including algorithmic principles and architectural design', 'is_primitive': False, 'dependencies': ['ST2'], 'estimated_time': 120, 'priority': 5}, {'id': 'ST4', 'name': 'Current Applications and Case Studies', 'description': 'Research and document current real-world applications of Hierarchical Task Planning Networks across domains like robotics, AI planning, and autonomous systems', 'is_primitive': True, 'dependencies': ['ST2'], 'estimated_time': 90, 'priority': 4}, {'id': 'ST5', 'name': 'Future Prospects and Research Challenges', 'description': 'Synthesize insights about potential future developments, emerging research directions, and current limitations in Hierarchical Task Planning Network technology', 'is_primitive': True, 'dependencies': ['ST3', 'ST4'], 'estimated_time': 75, 'priority': 3}, {'id': 'ST6', 'name': 'Report Drafting and Compilation', 'description': 'Integrate research findings into a comprehensive, well-structured report with clear sections, proper citations, and coherent narrative flow', 'is_primitive': True, 'dependencies': ['ST3', 'ST4', 'ST5'], 'estimated_time': 120, 'priority': 5}, {'id': 'ST7', 'name': 'Final Review and Editing', 'description': 'Perform final proofreading, fact-checking, formatting, and refinement of the research report', 'is_primitive': True, 'dependencies': ['ST6'], 'estimated_time': 45, 'priority': 4}]}
+2025-04-10 20:14:52,487 - htn_agent - DEBUG - Saved task_decomposition_parsed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_487872_task_decomposition_parsed_b96dee46.json
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - INFO - Creating 7 subtasks for task da59bbfe-012c-4d15-a9a2-f30168ebb971
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Creating subtask: Initial Literature Review
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Creating subtask: Source Compilation and Categorization
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Creating subtask: Technical Concept Analysis
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Creating subtask: Current Applications and Case Studies
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Creating subtask: Future Prospects and Research Challenges
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Creating subtask: Report Drafting and Compilation
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Creating subtask: Final Review and Editing
+2025-04-10 20:14:52,488 - htn_agent - DEBUG - Saved subtasks_created trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_488299_subtasks_created_f62859bc.json
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - INFO - Resolving dependencies for 7 subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Subtask Initial Literature Review has dependencies: set()
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST1' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Subtask Source Compilation and Categorization has dependencies: set()
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST2' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Subtask Technical Concept Analysis has dependencies: set()
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST2' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Subtask Current Applications and Case Studies has dependencies: set()
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST3' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST4' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Subtask Future Prospects and Research Challenges has dependencies: set()
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST3' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST4' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST5' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Subtask Report Drafting and Compilation has dependencies: set()
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST6' not found in created subtasks
+2025-04-10 20:14:52,488 - htn_agent.task_decomposer - DEBUG - Subtask Final Review and Editing has dependencies: set()
+2025-04-10 20:14:52,488 - htn_agent - DEBUG - Saved dependencies_resolved trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_488852_dependencies_resolved_ae35504c.json
+2025-04-10 20:14:52,489 - htn_agent.task_decomposer - INFO - Task da59bbfe-012c-4d15-a9a2-f30168ebb971 decomposed into 7 subtasks
+2025-04-10 20:14:52,489 - htn_agent - DEBUG - Saved task_decomposition_complete trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_489077_task_decomposition_complete_2414abf0.json
+2025-04-10 20:14:52,489 - htn_agent.task_executor - INFO - Executing task: 1b1c1f3c-ad23-4f68-aff4-aab8985b3fdf - Initial Literature Review
+2025-04-10 20:14:52,489 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_489452_task_execution_dependencies_fa7a2243.json
+2025-04-10 20:14:52,489 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_489620_task_execution_request_223e0f3f.json
+2025-04-10 20:14:52,489 - htn_agent.task_executor - INFO - Sending execution request for task 1b1c1f3c-ad23-4f68-aff4-aab8985b3fdf (attempt 1/4)
+2025-04-10 20:14:52,489 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_489804_task_execution_attempt_8683cd3a.json
+2025-04-10 20:14:52,490 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201452_489940_prompt_278d5196.json
+2025-04-10 20:14:52,490 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:14:52,493 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Initial Literature Review\n        Description: Conduct a comprehensive search of academic databases and journals to find recent publications, research papers, and conference proceedings about Hierarchical Task Planning Networks\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 0\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        \n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:14:52,495 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:14:52,495 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:14:52,495 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:14:52,495 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:14:52,495 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:06,545 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:14:52Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:14:54Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:15:06Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:14:54Z'), (b'request-id', b'req_015cDwPgkYAZau33H2dGFbG5'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e6494a2e09c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:15:06,545 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:15:06,545 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:06,546 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:06,546 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:06,546 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:06,546 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:15:06,568 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:15:06,603 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8db2d0>
+2025-04-10 20:15:06,603 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47410> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:15:06,654 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8db310>
+2025-04-10 20:15:06,654 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:06,654 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:06,655 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:06,655 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:06,655 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:06,687 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:06 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:15:06,687 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:15:06,687 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:06,687 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:06,687 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:06,687 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:06,687 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:15:06,688 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:15:06,688 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201506_688305_response_b08ecb05.json
+2025-04-10 20:15:06,688 - htn_agent - INFO - Received response from agent
+2025-04-10 20:15:06,688 - htn_agent - DEBUG - Response content: I'll conduct a comprehensive initial literature review on Hierarchical Task Planning Networks (HTPN) using academic research sources.
+
+🔍 Research Process:
+1. Search academic databases
+2. Focus on rece...
+2025-04-10 20:15:06,688 - htn_agent.task_executor - INFO - Successfully executed task 1b1c1f3c-ad23-4f68-aff4-aab8985b3fdf
+2025-04-10 20:15:06,688 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201506_688609_task_execution_response_8df6c63e.json
+2025-04-10 20:15:06,688 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201506_688873_task_execution_completed_9322151a.json
+2025-04-10 20:15:06,689 - htn_agent.task_decomposer - INFO - Decomposing task: c78218b1-8c43-46e4-967e-6916d38fd25e - Technical Concept Analysis
+2025-04-10 20:15:06,689 - htn_agent - DEBUG - Saved task_decomposition_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201506_689047_task_decomposition_request_f8081690.json
+2025-04-10 20:15:06,689 - htn_agent.task_decomposer - INFO - Sending decomposition request for task c78218b1-8c43-46e4-967e-6916d38fd25e
+2025-04-10 20:15:06,689 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201506_689206_prompt_2ef6fc3c.json
+2025-04-10 20:15:06,689 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Decomposition Request
+        
+        You need to break down the following task int...
+2025-04-10 20:15:06,691 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Decomposition Request\n        \n        You need to break down the following task into smaller, more manageable subtasks.\n        \n        ## Current Task\n        Name: Technical Concept Analysis\n        Description: Analyze the technical foundations, core mechanisms, and computational approaches of Hierarchical Task Planning Networks, including algorithmic principles and architectural design\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 0\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        \n        \n        \n        ## Decomposition Requirements\n        \n        1. Break this task down into 3-7 subtasks that together will accomplish the parent task\n        2. For each subtask, provide:\n           - A clear, concise name\n           - A detailed description\n           - Whether it\'s a primitive task (can be directly executed) or needs further decomposition\n           - Dependencies (IDs of other subtasks it depends on)\n           - Estimated time to complete (in minutes)\n           - Priority (1-5, with 5 being highest)\n        \n        ## Output Format\n        \n        Your response MUST be valid JSON with no extra text or explanation outside the JSON structure.\n        \n        Provide your response in the following JSON format:\n        \n        ```json\n        {\n          "subtasks": [\n            {\n              "name": "Subtask name",\n              "description": "Detailed description",\n              "is_primitive": true or false,\n              "dependencies": ["id1", "id2"],\n              "estimated_time": 15,\n              "priority": 3\n            }\n          ]\n        }\n        ```\n        \n        Note: For the first subtask, the dependencies list should be empty since there are no other subtasks yet.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:15:06,692 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:06,692 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:06,692 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:06,692 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:06,692 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:17,365 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:17 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:15:06Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:15:10Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:15:17Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:15:10Z'), (b'request-id', b'req_01MbKsFSiGKJUgv1RYb1PZRw'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e649a2eaeac9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:15:17,365 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:15:17,365 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:17,367 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:17,367 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:17,367 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:17,367 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:15:17,388 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:15:17,412 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8d9210>
+2025-04-10 20:15:17,413 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47410> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:15:17,461 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8d9d10>
+2025-04-10 20:15:17,461 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:17,462 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:17,462 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:17,462 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:17,462 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:17,496 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:17 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:15:17,496 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:15:17,497 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:17,497 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:17,497 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:17,497 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:17,497 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:15:17,497 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:15:17,497 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_497727_response_8fa57e5b.json
+2025-04-10 20:15:17,497 - htn_agent - INFO - Received response from agent
+2025-04-10 20:15:17,497 - htn_agent - DEBUG - Response content: {
+  "subtasks": [
+    {
+      "id": "ST1",
+      "name": "Research Literature Sources",
+      "description": "Identify and collect academic papers, research publications, and technical references abou...
+2025-04-10 20:15:17,498 - htn_agent - DEBUG - Saved task_decomposition_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_497949_task_decomposition_response_38268ff1.json
+2025-04-10 20:15:17,498 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 20:15:17,498 - htn_agent - DEBUG - Saved json_parsing_input trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_498083_json_parsing_input_d7bf0fb7.json
+2025-04-10 20:15:17,498 - htn_agent - DEBUG - Found JSON object pattern
+2025-04-10 20:15:17,498 - htn_agent - DEBUG - Saved json_parsing_result trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_498238_json_parsing_result_8e423675.json
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - INFO - Successfully parsed JSON response for task c78218b1-8c43-46e4-967e-6916d38fd25e
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Extracted JSON: {'subtasks': [{'id': 'ST1', 'name': 'Research Literature Sources', 'description': 'Identify and collect academic papers, research publications, and technical references about Hierarchical Task Planning Networks from reputable sources like ACM, IEEE, and AI research repositories', 'is_primitive': True, 'dependencies': [], 'estimated_time': 45, 'priority': 5}, {'id': 'ST2', 'name': 'Analyze Core Algorithmic Principles', 'description': 'Systematically examine the foundational algorithmic mechanisms of Hierarchical Task Planning Networks, focusing on task decomposition, hierarchical reasoning, and computational strategies', 'is_primitive': False, 'dependencies': ['ST1'], 'estimated_time': 60, 'priority': 4}, {'id': 'ST3', 'name': 'Investigate Architectural Design', 'description': 'Explore the structural components, network topology, and computational architecture underlying Hierarchical Task Planning Networks', 'is_primitive': False, 'dependencies': ['ST1'], 'estimated_time': 45, 'priority': 4}, {'id': 'ST4', 'name': 'Comparative Analysis', 'description': 'Compare Hierarchical Task Planning Networks with alternative planning approaches, identifying unique strengths, limitations, and innovative characteristics', 'is_primitive': True, 'dependencies': ['ST2', 'ST3'], 'estimated_time': 30, 'priority': 3}, {'id': 'ST5', 'name': 'Technical Concept Synthesis', 'description': 'Synthesize research findings into a comprehensive technical analysis document, integrating algorithmic principles, architectural insights, and comparative evaluation', 'is_primitive': True, 'dependencies': ['ST2', 'ST3', 'ST4'], 'estimated_time': 45, 'priority': 5}]}
+2025-04-10 20:15:17,498 - htn_agent - DEBUG - Saved task_decomposition_parsed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_498453_task_decomposition_parsed_c5ec5e0d.json
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - INFO - Creating 5 subtasks for task c78218b1-8c43-46e4-967e-6916d38fd25e
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Creating subtask: Research Literature Sources
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Creating subtask: Analyze Core Algorithmic Principles
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Creating subtask: Investigate Architectural Design
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Creating subtask: Comparative Analysis
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Creating subtask: Technical Concept Synthesis
+2025-04-10 20:15:17,498 - htn_agent - DEBUG - Saved subtasks_created trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_498781_subtasks_created_08906fdf.json
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - INFO - Resolving dependencies for 5 subtasks
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Subtask Research Literature Sources has dependencies: set()
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST1' not found in created subtasks
+2025-04-10 20:15:17,498 - htn_agent.task_decomposer - DEBUG - Subtask Analyze Core Algorithmic Principles has dependencies: set()
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST1' not found in created subtasks
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - DEBUG - Subtask Investigate Architectural Design has dependencies: set()
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST2' not found in created subtasks
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST3' not found in created subtasks
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - DEBUG - Subtask Comparative Analysis has dependencies: set()
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST2' not found in created subtasks
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST3' not found in created subtasks
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - WARNING - Referenced dependency 'ST4' not found in created subtasks
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - DEBUG - Subtask Technical Concept Synthesis has dependencies: set()
+2025-04-10 20:15:17,499 - htn_agent - DEBUG - Saved dependencies_resolved trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_499257_dependencies_resolved_0e4eb648.json
+2025-04-10 20:15:17,499 - htn_agent.task_decomposer - INFO - Task c78218b1-8c43-46e4-967e-6916d38fd25e decomposed into 5 subtasks
+2025-04-10 20:15:17,499 - htn_agent - DEBUG - Saved task_decomposition_complete trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_499429_task_decomposition_complete_618f21a5.json
+2025-04-10 20:15:17,499 - htn_agent.task_executor - INFO - Executing task: 72b9814e-2159-4c0e-9a47-d6831280a190 - Report Drafting and Compilation
+2025-04-10 20:15:17,499 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_499617_task_execution_dependencies_1edf6186.json
+2025-04-10 20:15:17,499 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_499717_task_execution_request_2042b193.json
+2025-04-10 20:15:17,499 - htn_agent.task_executor - INFO - Sending execution request for task 72b9814e-2159-4c0e-9a47-d6831280a190 (attempt 1/4)
+2025-04-10 20:15:17,499 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_499833_task_execution_attempt_ec6bf536.json
+2025-04-10 20:15:17,499 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201517_499932_prompt_1edc7d84.json
+2025-04-10 20:15:17,500 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:15:17,502 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Report Drafting and Compilation\n        Description: Integrate research findings into a comprehensive, well-structured report with clear sections, proper citations, and coherent narrative flow\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 0\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        \n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:15:17,502 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:17,503 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:17,503 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:17,503 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:17,503 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:30,185 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:30 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:15:17Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:15:21Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:15:30Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:15:21Z'), (b'request-id', b'req_01B2VTe4WsVJXmtbhKrzt8La'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e649e67c54c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:15:30,185 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:15:30,185 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:30,186 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:30,186 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:30,186 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:30,186 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:15:30,208 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:15:30,247 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8ebb10>
+2025-04-10 20:15:30,247 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47890> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:15:30,295 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8ebb50>
+2025-04-10 20:15:30,295 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:30,295 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:30,295 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:30,295 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:30,295 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:30,331 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:30 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:15:30,331 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:15:30,331 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:30,331 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:30,331 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:30,331 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:30,331 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:15:30,332 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:15:30,332 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_332288_response_dceaff43.json
+2025-04-10 20:15:30,332 - htn_agent - INFO - Received response from agent
+2025-04-10 20:15:30,332 - htn_agent - DEBUG - Response content: I'll help you draft a comprehensive report on Hierarchical Task Planning Networks (HTPN) by systematically gathering information, researching sources, and creating a structured report.
+
+Let me begin b...
+2025-04-10 20:15:30,332 - htn_agent.task_executor - INFO - Successfully executed task 72b9814e-2159-4c0e-9a47-d6831280a190
+2025-04-10 20:15:30,332 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_332548_task_execution_response_9cd94c1e.json
+2025-04-10 20:15:30,332 - htn_agent.task_executor - INFO - Added writing results to section: Report Drafting and Compilation
+2025-04-10 20:15:30,332 - htn_agent - DEBUG - Saved task_section_created trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_332688_task_section_created_b1e69430.json
+2025-04-10 20:15:30,332 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_332789_task_execution_completed_a3ed9138.json
+2025-04-10 20:15:30,332 - htn_agent.task_executor - INFO - Executing task: 5739eeb5-0683-40e1-9e9f-ff6dcef87b15 - Source Compilation and Categorization
+2025-04-10 20:15:30,333 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_332948_task_execution_dependencies_133cf1e8.json
+2025-04-10 20:15:30,333 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_333044_task_execution_request_02e37f72.json
+2025-04-10 20:15:30,333 - htn_agent.task_executor - INFO - Sending execution request for task 5739eeb5-0683-40e1-9e9f-ff6dcef87b15 (attempt 1/4)
+2025-04-10 20:15:30,333 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_333174_task_execution_attempt_99314649.json
+2025-04-10 20:15:30,333 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201530_333271_prompt_0c759b51.json
+2025-04-10 20:15:30,333 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:15:30,334 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Source Compilation and Categorization\n        Description: Organize and categorize gathered sources, create a bibliography, and extract key concepts, methodologies, and research findings related to Hierarchical Task Planning Networks\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 1\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        Report Drafting and Compilation\n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:15:30,335 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:30,335 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:30,335 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:30,335 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:30,335 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:44,059 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:44 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:15:30Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:15:32Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:15:44Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:15:32Z'), (b'request-id', b'req_011oZLXW6jhSaa1UHgQ8c1mg'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e64a36a9e8c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:15:44,059 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:15:44,059 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:44,060 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:44,061 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:44,061 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:44,061 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:15:44,081 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:15:44,107 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8d9e10>
+2025-04-10 20:15:44,107 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47890> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:15:44,164 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8da4d0>
+2025-04-10 20:15:44,164 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:44,164 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:44,164 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:44,165 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:44,165 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:44,192 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:15:44,193 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:15:44,193 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:44,193 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:44,193 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:44,193 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:44,193 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:15:44,193 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:15:44,193 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201544_193790_response_157f1352.json
+2025-04-10 20:15:44,193 - htn_agent - INFO - Received response from agent
+2025-04-10 20:15:44,193 - htn_agent - DEBUG - Response content: I'll help you with the source compilation and categorization for Hierarchical Task Planning Networks (HTPN). I'll systematically approach this by gathering sources, extracting key information, and org...
+2025-04-10 20:15:44,194 - htn_agent.task_executor - INFO - Successfully executed task 5739eeb5-0683-40e1-9e9f-ff6dcef87b15
+2025-04-10 20:15:44,194 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201544_194053_task_execution_response_ed47b607.json
+2025-04-10 20:15:44,194 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201544_194200_task_execution_completed_b60f473d.json
+2025-04-10 20:15:44,194 - htn_agent.task_executor - INFO - Executing task: 3528a363-9fed-4421-8e00-4816f0616ed7 - Current Applications and Case Studies
+2025-04-10 20:15:44,194 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201544_194396_task_execution_dependencies_9c863998.json
+2025-04-10 20:15:44,194 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201544_194496_task_execution_request_991bd1e9.json
+2025-04-10 20:15:44,194 - htn_agent.task_executor - INFO - Sending execution request for task 3528a363-9fed-4421-8e00-4816f0616ed7 (attempt 1/4)
+2025-04-10 20:15:44,194 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201544_194613_task_execution_attempt_cd986d64.json
+2025-04-10 20:15:44,194 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201544_194700_prompt_d8a9e55d.json
+2025-04-10 20:15:44,194 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:15:44,196 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Current Applications and Case Studies\n        Description: Research and document current real-world applications of Hierarchical Task Planning Networks across domains like robotics, AI planning, and autonomous systems\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 1\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        Report Drafting and Compilation\n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:15:44,196 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:44,197 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:44,197 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:44,197 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:44,197 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:57,203 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:15:44Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:15:45Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:15:57Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:15:45Z'), (b'request-id', b'req_0154JNvHcL8KSnAmKHrX34jU'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e64a8d4af1c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:15:57,203 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:15:57,204 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:57,206 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:57,206 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:57,206 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:57,206 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:15:57,228 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:15:57,250 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8f7650>
+2025-04-10 20:15:57,250 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa479b0> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:15:57,298 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8f76d0>
+2025-04-10 20:15:57,298 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:57,299 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:57,299 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:57,299 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:57,299 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:57,331 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:15:57 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:15:57,331 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:15:57,331 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:15:57,332 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:15:57,332 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:15:57,332 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:15:57,332 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:15:57,332 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:15:57,332 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201557_332610_response_d072bf31.json
+2025-04-10 20:15:57,332 - htn_agent - INFO - Received response from agent
+2025-04-10 20:15:57,332 - htn_agent - DEBUG - Response content: I'll help you research and document current real-world applications of Hierarchical Task Planning Networks (HTPN) across various domains.
+
+Research Approach:
+1. Conduct a comprehensive search on HTPN ...
+2025-04-10 20:15:57,332 - htn_agent.task_executor - INFO - Successfully executed task 3528a363-9fed-4421-8e00-4816f0616ed7
+2025-04-10 20:15:57,332 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201557_332914_task_execution_response_8431af92.json
+2025-04-10 20:15:57,333 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201557_333053_task_execution_completed_0e36175f.json
+2025-04-10 20:15:57,333 - htn_agent.task_executor - INFO - Executing task: 023c4174-a7d9-403b-961a-0c1967b6fba9 - Final Review and Editing
+2025-04-10 20:15:57,333 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201557_333245_task_execution_dependencies_754efcf2.json
+2025-04-10 20:15:57,333 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201557_333355_task_execution_request_7b5262f4.json
+2025-04-10 20:15:57,333 - htn_agent.task_executor - INFO - Sending execution request for task 023c4174-a7d9-403b-961a-0c1967b6fba9 (attempt 1/4)
+2025-04-10 20:15:57,333 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201557_333488_task_execution_attempt_241393da.json
+2025-04-10 20:15:57,333 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201557_333585_prompt_9dc72cd5.json
+2025-04-10 20:15:57,333 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:15:57,335 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Final Review and Editing\n        Description: Perform final proofreading, fact-checking, formatting, and refinement of the research report\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 1\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        Report Drafting and Compilation\n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:15:57,335 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:15:57,335 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:15:57,336 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:15:57,336 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:15:57,336 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:09,644 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:09 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:15:57Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:15:59Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:16:09Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:15:59Z'), (b'request-id', b'req_01M8tRN4K9F5Uiq1uz49K5Tt'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e64adf69c3c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:16:09,644 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:16:09,644 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:09,645 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:09,645 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:09,645 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:09,645 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:16:09,668 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:16:09,696 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94aaea7d0>
+2025-04-10 20:16:09,696 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47c80> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:16:09,746 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94aaf6390>
+2025-04-10 20:16:09,746 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:09,747 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:09,747 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:09,747 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:09,747 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:09,788 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:09 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:16:09,788 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:16:09,788 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:09,788 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:09,788 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:09,788 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:09,788 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:16:09,788 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:16:09,789 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201609_789009_response_49924904.json
+2025-04-10 20:16:09,789 - htn_agent - INFO - Received response from agent
+2025-04-10 20:16:09,789 - htn_agent - DEBUG - Response content: I'll help you with the final review and editing of the research report on Hierarchical Task Planning Networks (HTN). Since the current state shows that minimal work has been done, I'll take a comprehe...
+2025-04-10 20:16:09,789 - htn_agent.task_executor - INFO - Successfully executed task 023c4174-a7d9-403b-961a-0c1967b6fba9
+2025-04-10 20:16:09,789 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201609_789310_task_execution_response_8dc3de6f.json
+2025-04-10 20:16:09,789 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201609_789451_task_execution_completed_b51300ac.json
+2025-04-10 20:16:09,789 - htn_agent.task_executor - INFO - Executing task: 37b7e750-57f3-4cce-b0fe-c93e58def664 - Future Prospects and Research Challenges
+2025-04-10 20:16:09,789 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201609_789627_task_execution_dependencies_439d1073.json
+2025-04-10 20:16:09,789 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201609_789736_task_execution_request_855d760f.json
+2025-04-10 20:16:09,789 - htn_agent.task_executor - INFO - Sending execution request for task 37b7e750-57f3-4cce-b0fe-c93e58def664 (attempt 1/4)
+2025-04-10 20:16:09,789 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201609_789871_task_execution_attempt_614bce20.json
+2025-04-10 20:16:09,790 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201609_789970_prompt_0868516e.json
+2025-04-10 20:16:09,790 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:16:09,791 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Future Prospects and Research Challenges\n        Description: Synthesize insights about potential future developments, emerging research directions, and current limitations in Hierarchical Task Planning Network technology\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 0\n        Sources Found: 0\n        Report Sections: 1\n        \n        Facts Summary:\n        No facts have been gathered yet.\n        \n        Sources:\n        \n        \n        Completed Sections:\n        Report Drafting and Compilation\n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:16:09,792 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:09,792 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:09,792 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:09,792 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:09,792 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:24,575 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:24 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:16:09Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:16:11Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:16:24Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:16:11Z'), (b'request-id', b'req_01Gtga1p7u3sp3Hetj9gvbDY'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e64b2d4a82c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:16:24,575 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:16:24,575 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:24,575 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:24,575 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:24,575 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:24,575 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:16:24,598 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:16:24,621 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8d8750>
+2025-04-10 20:16:24,621 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47e30> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:16:24,674 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8daa90>
+2025-04-10 20:16:24,674 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:24,675 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:24,675 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:24,675 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:24,675 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:24,709 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:24 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:16:24,709 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:16:24,710 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:24,710 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:24,710 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:24,710 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:24,710 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:16:24,710 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:16:24,711 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201624_710818_response_37d867b9.json
+2025-04-10 20:16:24,711 - htn_agent - INFO - Received response from agent
+2025-04-10 20:16:24,711 - htn_agent - DEBUG - Response content: I'll help synthesize insights about the future prospects and research challenges in Hierarchical Task Planning Network (HTPN) technology. I'll break this down systematically:
+
+# Future Prospects and R...
+2025-04-10 20:16:24,711 - htn_agent.task_executor - INFO - Successfully executed task 37b7e750-57f3-4cce-b0fe-c93e58def664
+2025-04-10 20:16:24,711 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201624_711182_task_execution_response_210f691d.json
+2025-04-10 20:16:24,711 - htn_agent.task_executor - INFO - Added research results to sources as source_1
+2025-04-10 20:16:24,711 - htn_agent.task_executor - INFO - Extracted 32 facts from research
+2025-04-10 20:16:24,711 - htn_agent.task_executor - DEBUG - Extracted facts: {'fact_1': 'Potential for deeper integration with deep learning and reinforcement learning techniques', 'fact_2': 'Enhanced adaptive planning capabilities', 'fact_3': 'More dynamic and context-aware task decomposition', 'fact_4': 'Research focus on developing HTPNs that can:', 'fact_5': 'Critical application areas:', 'fact_6': 'Challenge: Managing exponential growth in planning complexity', 'fact_7': 'Research directions:', 'fact_8': 'Current limitations in managing:', 'fact_9': 'Need for:', 'fact_10': 'Probabilistic planning models', 'fact_11': 'Meta-learning for task decomposition', 'fact_12': 'Cross-domain knowledge transfer', 'fact_13': 'Neuromorphic computing approaches', 'fact_14': 'Enhanced autonomous systems', 'fact_15': 'More adaptive AI planning', 'fact_16': 'Improved human-robot interaction', 'fact_17': 'Complex problem-solving capabilities', 'Future Prospects and Research Challenges in Hierarchical Task Planning Networks': '', 'Current Technological Context': 'Hierarchical Task Planning Networks (HTPNs) represent an advanced approach to artificial intelligence and robotic planning, combining hierarchical decomposition with task network planning strategies.', 'Key Future Prospects': '', '1. Advanced Machine Learning Integration': '- Potential for deeper integration with deep learning and reinforcement learning techniques\n- Enhanced adaptive planning capabilities\n- More dynamic and context-aware task decomposition', '2. Improved Generalization': '- Research focus on developing HTPNs that can:\n  - Transfer learning across different domains\n  - Handle more complex, unpredictable environments\n  - Generalize task structures more effectively', '3. Robotics and Autonomous Systems': '- Critical application areas:\n  - Autonomous navigation\n  - Complex manipulation tasks\n  - Multi-agent coordination\n  - Adaptive mission planning', 'Research Challenges': '', '1. Computational Complexity': '- Challenge: Managing exponential growth in planning complexity\n- Research directions:\n  - More efficient pruning algorithms\n  - Advanced state space reduction techniques\n  - Intelligent hierarchical decomposition strategies', '2. Uncertainty Handling': '- Current limitations in managing:\n  - Partial observability\n  - Stochastic environments\n  - Dynamic, rapidly changing conditions', '3. Interpretability and Explainability': '- Need for:\n  - Transparent decision-making processes\n  - Human-understandable task decomposition\n  - Debugging and verification mechanisms', 'Emerging Research Domains': '1. Cognitive Architectures\n2. Human-AI Collaboration\n3. Edge Computing Integration\n4. Ethical AI Planning', 'Recommended Research Focus Areas': '- Probabilistic planning models\n- Meta-learning for task decomposition\n- Cross-domain knowledge transfer\n- Neuromorphic computing approaches', 'Potential Impact': '- Enhanced autonomous systems\n- More adaptive AI planning\n- Improved human-robot interaction\n- Complex problem-solving capabilities', 'Sources and References': '1. Russell, S., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach\n2. Sutton, R. S., & Barto, A. G. (2018). Reinforcement Learning: An Introduction\n3. Recent IEEE and ACM conference proceedings on AI and Robotics', 'Conclusion': 'Hierarchical Task Planning Networks represent a promising frontier in AI planning, with significant potential for transformative advancements in autonomous systems and intelligent decision-making.'}
+2025-04-10 20:16:24,711 - htn_agent - DEBUG - Saved task_facts_extracted trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201624_711786_task_facts_extracted_94086e92.json
+2025-04-10 20:16:24,712 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201624_711948_task_execution_completed_22e16152.json
+2025-04-10 20:16:24,712 - htn_agent.plan_adapter - INFO - Using extract_json_from_response from real_agno
+2025-04-10 20:16:24,712 - htn_agent.plan_adapter - INFO - Evaluating plan with 6 completed and 7 pending tasks
+2025-04-10 20:16:24,712 - htn_agent.plan_adapter - INFO - Sending plan adaptation request (attempt 1/4)
+2025-04-10 20:16:24,712 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201624_712302_prompt_7a078d09.json
+2025-04-10 20:16:24,712 - htn_agent - INFO - Sending prompt to agent: 
+        # Plan Adaptation Request
+        
+        Analyze the current research plan and suggest ad...
+2025-04-10 20:16:24,714 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Plan Adaptation Request\n        \n        Analyze the current research plan and suggest adaptations based on what we\'ve learned so far.\n        \n        ## Current Plan Status\n        \n        Total Tasks: 13\n        Completed: 6\n        Pending: 7\n        \n        State Summary:\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 32\n        Sources Found: 1\n        Report Sections: 1\n        \n        Facts Summary:\n        - fact_1: Potential for deeper integration with deep learning and reinforcement learning techniques\n- fact_2: Enhanced adaptive planning capabilities\n- fact_3: More dynamic and context-aware task decomposition\n- fact_4: Research focus on developing HTPNs that can:\n- fact_5: Critical application areas:\n- fact_6: Challenge: Managing exponential growth in planning complexity\n- fact_7: Research directions:\n- fact_8: Current limitations in managing:\n- fact_9: Need for:\n- fact_10: Probabilistic planning models\n- fact_11: Meta-learning for task decomposition\n- fact_12: Cross-domain knowledge transfer\n- fact_13: Neuromorphic computing approaches\n- fact_14: Enhanced autonomous systems\n- fact_15: More adaptive AI planning\n- fact_16: Improved human-robot interaction\n- fact_17: Complex problem-solving capabilities\n- Future Prospects and Research Challenges in Hierarchical Task Planning Networks: \n- Current Technological Context: Hierarchical Task Planning Networks (HTPNs) represent an advanced approach to artificial intelligence and robotic planning, combining hierarchical decomposition with task network planning strategies.\n- Key Future Prospects: \n- 1. Advanced Machine Learning Integration: - Potential for deeper integration with deep learning and reinforcement learning techniques\n- Enhanced adaptive planning capabilities\n- More dynamic and context-aware task decomposition\n- 2. Improved Generalization: - Research focus on developing HTPNs that can:\n  - Transfer learning across different domains\n  - Handle more complex, unpredictable environments\n  - Generalize task structures more effectively\n- 3. Robotics and Autonomous Systems: - Critical application areas:\n  - Autonomous navigation\n  - Complex manipulation tasks\n  - Multi-agent coordination\n  - Adaptive mission planning\n- Research Challenges: \n- 1. Computational Complexity: - Challenge: Managing exponential growth in planning complexity\n- Research directions:\n  - More efficient pruning algorithms\n  - Advanced state space reduction techniques\n  - Intelligent hierarchical decomposition strategies\n- 2. Uncertainty Handling: - Current limitations in managing:\n  - Partial observability\n  - Stochastic environments\n  - Dynamic, rapidly changing conditions\n- 3. Interpretability and Explainability: - Need for:\n  - Transparent decision-making processes\n  - Human-understandable task decomposition\n  - Debugging and verification mechanisms\n- Emerging Research Domains: 1. Cognitive Architectures\n2. Human-AI Collaboration\n3. Edge Computing Integration\n4. Ethical AI Planning\n- Recommended Research Focus Areas: - Probabilistic planning models\n- Meta-learning for task decomposition\n- Cross-domain knowledge transfer\n- Neuromorphic computing approaches\n- Potential Impact: - Enhanced autonomous systems\n- More adaptive AI planning\n- Improved human-robot interaction\n- Complex problem-solving capabilities\n- Sources and References: 1. Russell, S., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach\n2. Sutton, R. S., & Barto, A. G. (2018). Reinforcement Learning: An Introduction\n3. Recent IEEE and ACM conference proceedings on AI and Robotics\n- Conclusion: Hierarchical Task Planning Networks represent a promising frontier in AI planning, with significant potential for transformative advancements in autonomous systems and intelligent decision-making.\n        \n        Sources:\n        source_1\n        \n        Completed Sections:\n        Report Drafting and Compilation\n        \n        \n        Completed Tasks:\n        Initial Literature Review, Source Compilation and Categorization, Current Applications and Case Studies, Future Prospects and Research Challenges, Report Drafting and Compilation, Final Review and Editing\n        \n        Pending Tasks:\n        Research and Write Report on Hierarchical Task Planning Network, Technical Concept Analysis, Research Literature Sources, Analyze Core Algorithmic Principles, Investigate Architectural Design, Comparative Analysis, Technical Concept Synthesis\n        \n        \n        ## Adaptation Requirements\n        \n        1. Identify gaps in the current research\n        2. Suggest new tasks that should be added\n        3. Identify tasks that may no longer be necessary\n        4. Suggest priority changes for remaining tasks\n        \n        ## Output Format\n        \n        Your response MUST be valid JSON with no extra text or explanation outside the JSON structure.\n        \n        Provide your response in the following JSON format:\n        \n        ```json\n        {\n          "gaps_identified": ["gap1", "gap2"],\n          "new_tasks": [\n            {\n              "name": "New task name",\n              "description": "Detailed description",\n              "is_primitive": true,\n              "after_task": "id of task this should follow",\n              "priority": 4\n            }\n          ],\n          "tasks_to_remove": ["id1", "id2"],\n          "priority_changes": [\n            {\n              "task_id": "id3",\n              "new_priority": 5\n            }\n          ]\n        }\n        ```\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:16:24,714 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:24,714 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:24,715 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:24,715 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:24,715 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:31,501 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:31 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:16:24Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:16:26Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:16:31Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:16:26Z'), (b'request-id', b'req_01Xv2fKppdnP3AKJ976kar2U'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e64b8a8f0bc9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:16:31,501 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:16:31,501 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:31,502 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:31,502 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:31,502 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:31,502 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:16:31,522 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:16:31,549 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94aa07f90>
+2025-04-10 20:16:31,549 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47b60> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:16:31,603 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94aa005d0>
+2025-04-10 20:16:31,604 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:31,604 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:31,604 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:31,604 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:31,604 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:31,633 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:16:31,633 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:16:31,634 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:31,634 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:31,634 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:31,634 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:31,634 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:16:31,634 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:16:31,634 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201631_634743_response_53681478.json
+2025-04-10 20:16:31,634 - htn_agent - INFO - Received response from agent
+2025-04-10 20:16:31,634 - htn_agent - DEBUG - Response content: ```json
+{
+  "gaps_identified": [
+    "Limited exploration of neuromorphic computing approaches",
+    "Insufficient detail on meta-learning strategies",
+    "Lack of comprehensive uncertainty modeling ...
+2025-04-10 20:16:31,634 - htn_agent - INFO - Extracting JSON from response
+2025-04-10 20:16:31,635 - htn_agent - DEBUG - Saved json_parsing_input trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201631_635004_json_parsing_input_3141a027.json
+2025-04-10 20:16:31,635 - htn_agent - DEBUG - Found JSON in markdown code block
+2025-04-10 20:16:31,635 - htn_agent - DEBUG - Saved json_parsing_result trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201631_635177_json_parsing_result_a6c1b356.json
+2025-04-10 20:16:31,635 - htn_agent.plan_adapter - INFO - Successfully parsed plan adaptation response
+2025-04-10 20:16:31,635 - htn_agent.task_executor - INFO - Executing task: 150ac182-360b-4fc9-a1ae-0549dccaf605 - Research Literature Sources
+2025-04-10 20:16:31,635 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201631_635474_task_execution_dependencies_b49aaabc.json
+2025-04-10 20:16:31,635 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201631_635588_task_execution_request_38a51622.json
+2025-04-10 20:16:31,635 - htn_agent.task_executor - INFO - Sending execution request for task 150ac182-360b-4fc9-a1ae-0549dccaf605 (attempt 1/4)
+2025-04-10 20:16:31,635 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201631_635719_task_execution_attempt_399d37f2.json
+2025-04-10 20:16:31,635 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201631_635813_prompt_fb6141cf.json
+2025-04-10 20:16:31,635 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:16:31,637 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Research Literature Sources\n        Description: Identify and collect academic papers, research publications, and technical references about Hierarchical Task Planning Networks from reputable sources like ACM, IEEE, and AI research repositories\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 32\n        Sources Found: 1\n        Report Sections: 1\n        \n        Facts Summary:\n        - fact_1: Potential for deeper integration with deep learning and reinforcement learning techniques\n- fact_2: Enhanced adaptive planning capabilities\n- fact_3: More dynamic and context-aware task decomposition\n- fact_4: Research focus on developing HTPNs that can:\n- fact_5: Critical application areas:\n- fact_6: Challenge: Managing exponential growth in planning complexity\n- fact_7: Research directions:\n- fact_8: Current limitations in managing:\n- fact_9: Need for:\n- fact_10: Probabilistic planning models\n- fact_11: Meta-learning for task decomposition\n- fact_12: Cross-domain knowledge transfer\n- fact_13: Neuromorphic computing approaches\n- fact_14: Enhanced autonomous systems\n- fact_15: More adaptive AI planning\n- fact_16: Improved human-robot interaction\n- fact_17: Complex problem-solving capabilities\n- Future Prospects and Research Challenges in Hierarchical Task Planning Networks: \n- Current Technological Context: Hierarchical Task Planning Networks (HTPNs) represent an advanced approach to artificial intelligence and robotic planning, combining hierarchical decomposition with task network planning strategies.\n- Key Future Prospects: \n- 1. Advanced Machine Learning Integration: - Potential for deeper integration with deep learning and reinforcement learning techniques\n- Enhanced adaptive planning capabilities\n- More dynamic and context-aware task decomposition\n- 2. Improved Generalization: - Research focus on developing HTPNs that can:\n  - Transfer learning across different domains\n  - Handle more complex, unpredictable environments\n  - Generalize task structures more effectively\n- 3. Robotics and Autonomous Systems: - Critical application areas:\n  - Autonomous navigation\n  - Complex manipulation tasks\n  - Multi-agent coordination\n  - Adaptive mission planning\n- Research Challenges: \n- 1. Computational Complexity: - Challenge: Managing exponential growth in planning complexity\n- Research directions:\n  - More efficient pruning algorithms\n  - Advanced state space reduction techniques\n  - Intelligent hierarchical decomposition strategies\n- 2. Uncertainty Handling: - Current limitations in managing:\n  - Partial observability\n  - Stochastic environments\n  - Dynamic, rapidly changing conditions\n- 3. Interpretability and Explainability: - Need for:\n  - Transparent decision-making processes\n  - Human-understandable task decomposition\n  - Debugging and verification mechanisms\n- Emerging Research Domains: 1. Cognitive Architectures\n2. Human-AI Collaboration\n3. Edge Computing Integration\n4. Ethical AI Planning\n- Recommended Research Focus Areas: - Probabilistic planning models\n- Meta-learning for task decomposition\n- Cross-domain knowledge transfer\n- Neuromorphic computing approaches\n- Potential Impact: - Enhanced autonomous systems\n- More adaptive AI planning\n- Improved human-robot interaction\n- Complex problem-solving capabilities\n- Sources and References: 1. Russell, S., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach\n2. Sutton, R. S., & Barto, A. G. (2018). Reinforcement Learning: An Introduction\n3. Recent IEEE and ACM conference proceedings on AI and Robotics\n- Conclusion: Hierarchical Task Planning Networks represent a promising frontier in AI planning, with significant potential for transformative advancements in autonomous systems and intelligent decision-making.\n        \n        Sources:\n        source_1\n        \n        Completed Sections:\n        Report Drafting and Compilation\n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:16:31,637 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:31,638 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:31,638 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:31,638 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:31,638 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:44,049 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:44 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:16:31Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:16:32Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:16:44Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:16:32Z'), (b'request-id', b'req_01NTECdfof9XZxcZvqdxWNnm'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e64bb5cc05c9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:16:44,049 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:16:44,049 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:44,049 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:44,050 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:44,050 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:44,050 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:16:44,074 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:16:44,101 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8efed0>
+2025-04-10 20:16:44,101 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47ad0> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:16:44,151 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8ed110>
+2025-04-10 20:16:44,152 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:44,152 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:44,152 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:44,152 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:44,152 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:44,185 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:16:44,185 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:16:44,185 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:44,185 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:44,185 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:44,185 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:44,186 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:16:44,186 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:16:44,186 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_186383_response_351510b2.json
+2025-04-10 20:16:44,186 - htn_agent - INFO - Received response from agent
+2025-04-10 20:16:44,186 - htn_agent - DEBUG - Response content: I'll help you research Literature Sources for Hierarchical Task Planning Networks (HTPNs). Based on the current state and task requirements, I'll focus on identifying additional academic sources and e...
+2025-04-10 20:16:44,186 - htn_agent.task_executor - INFO - Successfully executed task 150ac182-360b-4fc9-a1ae-0549dccaf605
+2025-04-10 20:16:44,186 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_186671_task_execution_response_beb450be.json
+2025-04-10 20:16:44,186 - htn_agent.task_executor - INFO - Added research results to sources as source_2
+2025-04-10 20:16:44,186 - htn_agent.task_executor - INFO - Extracted 10 facts from research
+2025-04-10 20:16:44,186 - htn_agent.task_executor - DEBUG - Extracted facts: {'fact_1': '"Hierarchical Task Networks: A Survey of Methods and Applications"', 'fact_2': 'IEEE International Conference on Robotics and Automation (ICRA) proceedings', 'fact_3': 'ACM Conference on Planning and Robotics', 'fact_4': 'Neural Information Processing Systems (NeurIPS) conference papers', 'fact_5': '"Meta-Learning for Hierarchical Task Planning"', 'fact_6': '"Adaptive Decomposition in Robotic Planning Networks"', 'fact_7': '"Probabilistic Approaches to Hierarchical Task Networks"', 'fact_8': 'Increased understanding of HTPN methodologies', 'fact_9': 'Identification of cutting-edge research trends', 'fact_10': 'Foundation for advanced AI planning strategies'}
+2025-04-10 20:16:44,187 - htn_agent - DEBUG - Saved task_facts_extracted trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_186958_task_facts_extracted_8c481a83.json
+2025-04-10 20:16:44,187 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_187082_task_execution_completed_630d51d4.json
+2025-04-10 20:16:44,187 - htn_agent.task_executor - INFO - Executing task: b29b1c80-a178-4154-82af-62f386c23500 - Technical Concept Synthesis
+2025-04-10 20:16:44,187 - htn_agent - DEBUG - Saved task_execution_dependencies trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_187269_task_execution_dependencies_609926e8.json
+2025-04-10 20:16:44,187 - htn_agent - DEBUG - Saved task_execution_request trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_187367_task_execution_request_efd3c624.json
+2025-04-10 20:16:44,187 - htn_agent.task_executor - INFO - Sending execution request for task b29b1c80-a178-4154-82af-62f386c23500 (attempt 1/4)
+2025-04-10 20:16:44,187 - htn_agent - DEBUG - Saved task_execution_attempt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_187490_task_execution_attempt_23d04a1b.json
+2025-04-10 20:16:44,187 - htn_agent - DEBUG - Saved prompt trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201644_187572_prompt_fae6aaa6.json
+2025-04-10 20:16:44,187 - htn_agent - INFO - Sending prompt to agent: 
+        # Task Execution Request
+        
+        You need to execute the following primitive task:...
+2025-04-10 20:16:44,189 - anthropic._base_client - DEBUG - Request options: {'method': 'post', 'url': '/v1/messages', 'timeout': Timeout(connect=5.0, read=600, write=600, pool=600), 'files': None, 'json_data': {'max_tokens': 4096, 'messages': [{'role': 'user', 'content': [{'type': 'text', 'text': '\n        # Task Execution Request\n        \n        You need to execute the following primitive task:\n        \n        ## Task Information\n        Name: Technical Concept Synthesis\n        Description: Synthesize research findings into a comprehensive technical analysis document, integrating algorithmic principles, architectural insights, and comparative evaluation\n        \n        ## Current State\n        \n        Topic: Hierarchical Task Planning Network\n        \n        Facts Gathered: 32\n        Sources Found: 2\n        Report Sections: 1\n        \n        Facts Summary:\n        - fact_1: "Hierarchical Task Networks: A Survey of Methods and Applications"\n- fact_2: IEEE International Conference on Robotics and Automation (ICRA) proceedings\n- fact_3: ACM Conference on Planning and Robotics\n- fact_4: Neural Information Processing Systems (NeurIPS) conference papers\n- fact_5: "Meta-Learning for Hierarchical Task Planning"\n- fact_6: "Adaptive Decomposition in Robotic Planning Networks"\n- fact_7: "Probabilistic Approaches to Hierarchical Task Networks"\n- fact_8: Increased understanding of HTPN methodologies\n- fact_9: Identification of cutting-edge research trends\n- fact_10: Foundation for advanced AI planning strategies\n- fact_11: Meta-learning for task decomposition\n- fact_12: Cross-domain knowledge transfer\n- fact_13: Neuromorphic computing approaches\n- fact_14: Enhanced autonomous systems\n- fact_15: More adaptive AI planning\n- fact_16: Improved human-robot interaction\n- fact_17: Complex problem-solving capabilities\n- Future Prospects and Research Challenges in Hierarchical Task Planning Networks: \n- Current Technological Context: Hierarchical Task Planning Networks (HTPNs) represent an advanced approach to artificial intelligence and robotic planning, combining hierarchical decomposition with task network planning strategies.\n- Key Future Prospects: \n- 1. Advanced Machine Learning Integration: - Potential for deeper integration with deep learning and reinforcement learning techniques\n- Enhanced adaptive planning capabilities\n- More dynamic and context-aware task decomposition\n- 2. Improved Generalization: - Research focus on developing HTPNs that can:\n  - Transfer learning across different domains\n  - Handle more complex, unpredictable environments\n  - Generalize task structures more effectively\n- 3. Robotics and Autonomous Systems: - Critical application areas:\n  - Autonomous navigation\n  - Complex manipulation tasks\n  - Multi-agent coordination\n  - Adaptive mission planning\n- Research Challenges: \n- 1. Computational Complexity: - Challenge: Managing exponential growth in planning complexity\n- Research directions:\n  - More efficient pruning algorithms\n  - Advanced state space reduction techniques\n  - Intelligent hierarchical decomposition strategies\n- 2. Uncertainty Handling: - Current limitations in managing:\n  - Partial observability\n  - Stochastic environments\n  - Dynamic, rapidly changing conditions\n- 3. Interpretability and Explainability: - Need for:\n  - Transparent decision-making processes\n  - Human-understandable task decomposition\n  - Debugging and verification mechanisms\n- Emerging Research Domains: 1. Cognitive Architectures\n2. Human-AI Collaboration\n3. Edge Computing Integration\n4. Ethical AI Planning\n- Recommended Research Focus Areas: - Probabilistic planning models\n- Meta-learning for task decomposition\n- Cross-domain knowledge transfer\n- Neuromorphic computing approaches\n- Potential Impact: - Enhanced autonomous systems\n- More adaptive AI planning\n- Improved human-robot interaction\n- Complex problem-solving capabilities\n- Sources and References: 1. Russell, S., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach\n2. Sutton, R. S., & Barto, A. G. (2018). Reinforcement Learning: An Introduction\n3. Recent IEEE and ACM conference proceedings on AI and Robotics\n- Conclusion: Hierarchical Task Planning Networks represent a promising frontier in AI planning, with significant potential for transformative advancements in autonomous systems and intelligent decision-making.\n        \n        Sources:\n        source_1; source_2\n        \n        Completed Sections:\n        Report Drafting and Compilation\n        \n        \n        ## Dependency Results\n        No dependencies.\n        \n        \n        ## Execution Instructions\n        \n        1. You have access to web search, Wikipedia, and calculator tools\n        2. Use these tools as needed to complete the task\n        3. Provide a clear, comprehensive result\n        4. If the task involves research, include sources\n        5. If the task involves writing content, make it well-structured\n        \n        ## Your Response\n        \n        Perform the task described above and provide your results below.\n        '}]}], 'model': 'claude-3-5-haiku-latest', 'system': '<instructions>\nYou are an AI research assistant that helps with research and writing tasks.\n</instructions>'}}
+2025-04-10 20:16:44,189 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:44,189 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:44,189 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:44,190 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:44,190 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:56,543 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:56 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'anthropic-ratelimit-requests-limit', b'4000'), (b'anthropic-ratelimit-requests-remaining', b'3999'), (b'anthropic-ratelimit-requests-reset', b'2025-04-11T00:16:44Z'), (b'anthropic-ratelimit-input-tokens-limit', b'400000'), (b'anthropic-ratelimit-input-tokens-remaining', b'400000'), (b'anthropic-ratelimit-input-tokens-reset', b'2025-04-11T00:16:45Z'), (b'anthropic-ratelimit-output-tokens-limit', b'80000'), (b'anthropic-ratelimit-output-tokens-remaining', b'80000'), (b'anthropic-ratelimit-output-tokens-reset', b'2025-04-11T00:16:56Z'), (b'anthropic-ratelimit-tokens-limit', b'480000'), (b'anthropic-ratelimit-tokens-remaining', b'480000'), (b'anthropic-ratelimit-tokens-reset', b'2025-04-11T00:16:45Z'), (b'request-id', b'req_01TJNuyQgBdTfaxvP2R3R1Fw'), (b'anthropic-organization-id', b'cc5becb5-595d-4086-a295-d6b4083d0744'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Robots-Tag', b'none'), (b'Server', b'cloudflare'), (b'CF-RAY', b'92e64c04484dc9ac-IAD'), (b'Content-Encoding', b'gzip')])
+2025-04-10 20:16:56,543 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-04-10 20:16:56,543 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:56,543 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:56,543 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:56,543 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:56,544 - anthropic._base_client - DEBUG - HTTP Request: POST https://api.anthropic.com/v1/messages "200 OK"
+2025-04-10 20:16:56,567 - httpcore.connection - DEBUG - connect_tcp.started host='api.agno.com' port=443 local_address=None timeout=60 socket_options=None
+2025-04-10 20:16:56,592 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a91e0d0>
+2025-04-10 20:16:56,592 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x74a94aa47b60> server_hostname='api.agno.com' timeout=60
+2025-04-10 20:16:56,638 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x74a94a8f5f50>
+2025-04-10 20:16:56,638 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:56,639 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-04-10 20:16:56,639 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-04-10 20:16:56,639 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-04-10 20:16:56,639 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-04-10 20:16:56,668 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Apr 2025 00:16:56 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'72'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn')])
+2025-04-10 20:16:56,668 - httpx - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-04-10 20:16:56,668 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-04-10 20:16:56,668 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-04-10 20:16:56,668 - httpcore.http11 - DEBUG - response_closed.started
+2025-04-10 20:16:56,668 - httpcore.http11 - DEBUG - response_closed.complete
+2025-04-10 20:16:56,668 - httpcore.connection - DEBUG - close.started
+2025-04-10 20:16:56,668 - httpcore.connection - DEBUG - close.complete
+2025-04-10 20:16:56,669 - htn_agent - DEBUG - Saved response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201656_668984_response_517ce312.json
+2025-04-10 20:16:56,669 - htn_agent - INFO - Received response from agent
+2025-04-10 20:16:56,669 - htn_agent - DEBUG - Response content: I'll synthesize the research findings on Hierarchical Task Planning Networks (HTPNs) into a comprehensive technical analysis document.
+
+# Comprehensive Technical Analysis: Hierarchical Task Planning N...
+2025-04-10 20:16:56,669 - htn_agent.task_executor - INFO - Successfully executed task b29b1c80-a178-4154-82af-62f386c23500
+2025-04-10 20:16:56,669 - htn_agent - DEBUG - Saved task_execution_response trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201656_669276_task_execution_response_e55807e0.json
+2025-04-10 20:16:56,669 - htn_agent - DEBUG - Saved task_execution_completed trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201656_669405_task_execution_completed_e1906d52.json
+2025-04-10 20:16:56,669 - htn_agent - DEBUG - Saved demo_execution_metrics trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201656_669539_demo_execution_metrics_5d7447ce.json
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - 
+===== Final Report =====
+
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - Plan execution reached maximum steps (10). Partial results available.
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - 
+===== Plan Structure =====
+
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - # Current Plan Structure
+
+🔄 Research and Write Report on Hierarchical Task Planning Network (da59bb...)
+  ✓ Initial Literature Review (1b1c1f...)
+  ✓ Source Compilation and Categorization (5739ee...)
+  🔄 Technical Concept Analysis (c78218...)
+    ✓ Research Literature Sources (150ac1...)
+    ✅ Analyze Core Algorithmic Principles (e9b0fd...)
+    ✅ Investigate Architectural Design (2b01e0...)
+    ✅ Comparative Analysis (623a52...)
+    ✓ Technical Concept Synthesis (b29b1c...)
+  ✓ Current Applications and Case Studies (3528a3...)
+  ✓ Future Prospects and Research Challenges (37b7e7...)
+  ✓ Report Drafting and Compilation (72b981...)
+  ✓ Final Review and Editing (023c41...)
+✅ Neuromorphic Computing Integration Analysis (0aa78a...)
+✅ Meta-Learning Strategy Deep Dive (60a254...)
+✅ Uncertainty Modeling Framework (0679c9...)
+
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - 
+===== Plan Status =====
+
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - topic: Hierarchical Task Planning Network
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - total_tasks: 16
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - completed: 8
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - pending: 0
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - in_progress: 0
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - decomposing: 2
+2025-04-10 20:16:56,669 - htn_agent_demo - INFO - failed: 0
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - facts_gathered: 32
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - sources_found: 2
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - sections_written: 1
+2025-04-10 20:16:56,670 - htn_agent - DEBUG - Saved demo_final_plan_status trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201656_670074_demo_final_plan_status_51810afc.json
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - 
+===== Facts Gathered =====
+
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_1: "Hierarchical Task Networks: A Survey of Methods and Applications"
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_2: IEEE International Conference on Robotics and Automation (ICRA) proceedings
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_3: ACM Conference on Planning and Robotics
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_4: Neural Information Processing Systems (NeurIPS) conference papers
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_5: "Meta-Learning for Hierarchical Task Planning"
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_6: "Adaptive Decomposition in Robotic Planning Networks"
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_7: "Probabilistic Approaches to Hierarchical Task Networks"
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_8: Increased understanding of HTPN methodologies
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_9: Identification of cutting-edge research trends
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_10: Foundation for advanced AI planning strategies
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_11: Meta-learning for task decomposition
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_12: Cross-domain knowledge transfer
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_13: Neuromorphic computing approaches
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_14: Enhanced autonomous systems
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_15: More adaptive AI planning
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_16: Improved human-robot interaction
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - fact_17: Complex problem-solving capabilities
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Future Prospects and Research Challenges in Hierarchical Task Planning Networks: 
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Current Technological Context: Hierarchical Task Planning Networks (HTPNs) represent an advanced approach to artificial intelligenc...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Key Future Prospects: 
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - 1. Advanced Machine Learning Integration: - Potential for deeper integration with deep learning and reinforcement learning techniques
+- Enhanc...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - 2. Improved Generalization: - Research focus on developing HTPNs that can:
+  - Transfer learning across different domains
+  - Ha...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - 3. Robotics and Autonomous Systems: - Critical application areas:
+  - Autonomous navigation
+  - Complex manipulation tasks
+  - Multi-age...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Research Challenges: 
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - 1. Computational Complexity: - Challenge: Managing exponential growth in planning complexity
+- Research directions:
+  - More effi...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - 2. Uncertainty Handling: - Current limitations in managing:
+  - Partial observability
+  - Stochastic environments
+  - Dynamic...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - 3. Interpretability and Explainability: - Need for:
+  - Transparent decision-making processes
+  - Human-understandable task decomposition
+  ...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Emerging Research Domains: 1. Cognitive Architectures
+2. Human-AI Collaboration
+3. Edge Computing Integration
+4. Ethical AI Pla...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Recommended Research Focus Areas: - Probabilistic planning models
+- Meta-learning for task decomposition
+- Cross-domain knowledge tran...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Potential Impact: - Enhanced autonomous systems
+- More adaptive AI planning
+- Improved human-robot interaction
+- Compl...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Sources and References: 1. Russell, S., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach
+2. Sutton, R. S., & ...
+2025-04-10 20:16:56,670 - htn_agent_demo - INFO - - Conclusion: Hierarchical Task Planning Networks represent a promising frontier in AI planning, with significant ...
+2025-04-10 20:16:56,670 - htn_agent - DEBUG - Saved demo_facts_gathered trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201656_670915_demo_facts_gathered_45a66aea.json
+2025-04-10 20:16:56,671 - htn_agent_demo - INFO - 
+===== Demo Complete =====
+2025-04-10 20:16:56,671 - htn_agent_demo - INFO - Run duration: 135.70 seconds
+2025-04-10 20:16:56,671 - htn_agent - DEBUG - Saved demo_run_complete trace to /home/manuel/code/others/llms/agno/ttmp/2025-04-10/implementation/traces/20250410_201656_671083_demo_run_complete_3705e8f1.json
